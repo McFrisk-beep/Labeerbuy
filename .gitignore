@@ -1,0 +1,17 @@
+/node_modules/
+/**/node_modules/
+/**/node_modules/*
+/_tools/*
+/**/.DS_Store
+.DS_Store
+/**/DeployDistribution/
+/**/LocalDistribution/
+/**/.nsdeploy/
+/Contents/
+/Core/.nsdeploy
+/Theme/.nsdeploy
+/Extension/.nsdeploy
+/Extension/Workspace/Extras/
+/Extension/tmp/
+/Theme/Workspace/Extras/
+/Theme/tmp/
