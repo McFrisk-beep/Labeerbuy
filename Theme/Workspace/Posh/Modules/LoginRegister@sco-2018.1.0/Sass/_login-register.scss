@@ -1,0 +1,44 @@
+/* Edited for Posh Theme */
+
+.login-register-header{
+	@extend .row;
+	margin-bottom: $sc-margin-lv4;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.login-register-title{
+	@extend .col-xs-12;
+}
+
+.login-register-title-noregister{
+	text-align: center;
+}
+
+.login-register-body{
+	@extend .row;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.login-register-body-colored{
+	@extend .login-register-body;
+
+	& .login-register-wrapper-column-login {
+		@extend .col-sm-push-3;
+	}
+}
+
+.login-register-wrapper-column-login,
+.login-register-wrapper-column-register{
+	@extend .col-xs-12;
+	@extend .col-sm-6;
+}
+
+.login-register-wrapper-login,
+.login-register-wrapper-register{
+	@extend .box-column;
+}
+
+.login-register-wrapper-guest{}
+.login-register-title-register{}

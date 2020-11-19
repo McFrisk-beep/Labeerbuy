@@ -1,0 +1,152 @@
+.home {
+    @extend .container;
+    @include site-max-width-container;
+}
+
+.home-banner-top-message {
+  @extend .message-info;
+  @extend .message-large;
+}
+
+/* Promo Area */
+.home-promo {
+    display: flex; /* or inline-flex */
+    margin: $sc-margin-lv5 0;
+    flex-wrap: wrap;
+    background-color: $sc-home-promo-background-color;
+
+    & h2 {
+        padding-bottom: $sc-padding-lv1;
+    }
+
+    & p {
+        margin: 0 $sc-margin-lv5 $sc-margin-lv5 $sc-margin-lv5;
+        @media (min-width: $screen-sm-min) {
+            margin: 0 0 $sc-margin-lv5 0;
+        }
+    }
+}
+
+.home-promo-image, .home-promo-text {
+	width: 100%;
+    flex: auto;
+    align-self: center;
+
+    @media (min-width: $screen-sm-min) {
+        width: 50%;
+    }
+}
+
+.home-promo-text {
+    position: relative;
+}
+
+.home-promo-image img {
+    vertical-align: top;
+}
+
+.home-promo-text-content {
+    text-align: center;
+    padding: 25px;
+
+    & a {
+        @extend .button-primary;
+        @extend .button-medium;
+        width: auto;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        padding: 0 25px;
+    }
+
+    @media (min-width: $screen-md-min) {
+        padding: 0 100px;
+    }
+}
+
+/* INFOBLOCKS */
+.home-infoblock-layout {
+    display: -ms-flexbox; /* Flex prefix for IE */
+    display: flex; /* or inline-flex */
+    margin: $sc-margin-lv2 $sc-margin-lv1;
+    flex-wrap: wrap;
+}
+
+.home-infoblock {
+	  position: relative;
+    padding: $sc-padding-lv1 $sc-padding-lv1 0 $sc-padding-lv1;
+    width: 50%;
+    flex: auto;
+    @media (min-width: $screen-sm-min) {
+        width: 25%;
+    }
+}
+
+.home-infoblock-span2 {
+    width: 100%;
+    @media (min-width: $screen-sm-min) {
+        width: 50%;
+    }
+}
+
+.home-infoblock-image {
+  	opacity: $sc-home-infoblock-cell-content-overlay-opacity;
+  	width: 100%;
+  	height: auto;
+    transition: opacity 0.75s;
+    -webkit-transition: opacity 0.75s;
+}
+
+.home-infoblock-image:hover {
+    opacity: 1.0;
+}
+
+.home-infoblock-link:hover .home-infoblock-image {
+  	opacity: 1.0;
+}
+
+.home-infoblock-text { /*caption*/
+	  position: absolute;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-family: $sc-theme-secondary-font;
+    //font-size: $sc-font-size-xxxl;
+    text-transform: uppercase;
+    color: $sc-color-copy;
+    font-weight: $sc-font-weight-extrabold;
+
+    //Using a screen width relative unit in order
+    //to make the font size more dynamic. Alowing the customer
+    //to use longer words without adding too many breakpoints
+    font-size: 3vw;
+    line-height: 3vw;
+    @media (min-width: $screen-sm-min) {
+      font-size: 2vw;
+      line-height: 2vw;
+    }
+    //just for prevent possible issues reported, we're
+    //adding another breakpoint with a maximum font size.
+    //The font is not really breaking, but we want to consider
+    //those customers with unusual screen resolutions.
+    @media (min-width: $screen-lg-min) {
+      font-size: 30px;
+    }
+}
+.home-infoblock-span2 {
+  .home-infoblock-text {
+    //Using a screen width relative unit in order
+    //to make the font size more dynamic. Alowing the customer
+    //to use longer words without adding too many breakpoints
+    font-size: 4vw;
+    line-height: 4vw;
+    //just for prevent possible issues reported, we're
+    //adding another breakpoint with a maximum font size.
+    //The font is not really breaking, but we want to consider
+    //those customers with unusual screen resolutions.
+    @media (min-width: $screen-lg-min) {
+      font-size: 30px;
+    }
+  }
+}

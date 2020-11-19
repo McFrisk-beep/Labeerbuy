@@ -1,0 +1,78 @@
+#content {
+    .home-page { //push carousel under header
+        margin-top: -$sc-margin-lv4;
+        @media (min-width: $screen-md-min) {
+            margin-top: -$sc-header-margin-bottom-desktop;
+        }
+    }
+}
+
+.banner-breadcrumb-top {
+    .theme-has-static-header & {
+        padding-top: 0;
+    }
+}
+
+/* Fancy horizontal line */
+.separator-line {
+    margin: $sc-margin-lv4 $sc-margin-lv7 * 2 0 $sc-margin-lv7 * 2;
+    border-top: 1px solid $sc-color-copy;
+    @media (min-width: $screen-md-min) {
+        //margin: $sc-margin-lv4 150px 0 150px;
+    }
+}
+
+.separator-box {
+    height: 20px;
+    width: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 1px solid $sc-color-copy;
+    border-right: 1px solid $sc-color-copy;
+    position: relative;
+    top: -10px;
+    -ms-transform: skewX(45deg); /* IE 9 */
+    -webkit-transform: skewX(45deg); /* Safari */
+    transform: skewX(45deg); /* Standard syntax */
+}
+
+$sc-featured-title-color: $sc-color-copy; /* editable({"type": "color", "label": "Featured title color"}) */
+
+/* Headings with central line */
+.line-thru {
+    @extend h5;
+    overflow: hidden;
+    text-align: center;
+    color: $sc-featured-title-color;
+    text-transform: uppercase;
+    font-family: $sc-theme-secondary-font;
+    margin: $sc-margin-lv2;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: $sc-font-weight-bold !important;
+
+    @media (min-width: $screen-sm-min) {
+        margin: 0 100px $sc-margin-lv6 100px;
+    }
+
+    &:before,
+    &:after {
+        //border-top: 1px solid $sc-color-copy; //for double line
+        border-bottom: 1px solid $sc-featured-title-color;
+        content: "";
+        display: inline-block;
+        height: .1em;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+        margin-bottom: .15em;
+    }
+    &:before {
+        right: 1em;
+        margin-left: -50%;
+    }
+    &:after {
+        left: 1em;
+        margin-right: -50%;
+    }
+}

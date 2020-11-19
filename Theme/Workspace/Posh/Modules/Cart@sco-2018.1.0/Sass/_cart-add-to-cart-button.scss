@@ -1,0 +1,22 @@
+// Edited for Posh
+
+.cart-add-to-cart-button-button{
+	@extend .button-primary;
+	@extend .button-large;
+	width: 100%;
+ 	//font-weight: $sc-font-weight-semibold;
+ 	margin-top: $sc-margin-lv3;
+}
+
+.cart-add-to-cart-button {
+	position: static;
+	margin-bottom: $sc-margin-lv3 * 2;
+
+	@media (min-width: $screen-md-min) {
+		margin-bottom: 0;
+	}
+}
+
+.cart-add-to-cart-button-container {
+	@extend .col-sm-6;
+}
