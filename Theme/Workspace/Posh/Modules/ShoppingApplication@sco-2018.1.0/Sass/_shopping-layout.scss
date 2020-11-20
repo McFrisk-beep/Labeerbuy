@@ -1,0 +1,29 @@
+/* Edited for Posh Theme */
+
+.shopping-layout {
+	@extend %sc-layout;
+}
+
+.shopping-layout-header {
+	@include common-header;
+}
+
+.shopping-layout-footer {
+	@extend %sc-footer !optional;
+}
+
+.shopping-layout-breadcrumb, .shopping-layout-notifications {
+    @extend .container;
+    @include site-max-width-container;
+    padding-left: $sc-content-padding;
+    padding-right: $sc-content-padding;
+}
+
+.shopping-layout-breadcrumb {}
+
+.shopping-layout-no-javascript-msg {
+	@extend .message-warning;
+	width: 100%;
+}
+
+.shopping-layout-content{}

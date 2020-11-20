@@ -1,0 +1,56 @@
+/* Edited for Posh Theme */
+
+.facets-browse-category-heading-list-header
+{
+    text-align: center;
+    padding-bottom: $sc-padding-lv3;
+}
+
+.facets-browse-category-heading-main-description
+{
+	width: auto;
+	margin: $sc-margin-lv2;
+
+	@media (min-width: $screen-md-min)
+	{
+		margin-left: $sc-margin-lv4;
+	}
+
+}
+
+.facets-browse-category-heading-main-description h1
+{
+    font-weight: 700;
+    font-style: italic;
+
+	&:after {
+        content:  '';
+        height: 1px;
+        background-color: $sc-color-theme;
+        width: 80%;
+    }
+}
+
+.facets-browse-category-heading-main-image
+{
+	display: none;
+
+	@media (min-width: $screen-md-min)
+	{
+		display: inherit;
+	}
+}
+
+
+.facets-browse-category-heading-divider-mobile {
+    width: 80%;
+    margin: $sc-margin-lv6 auto 0;
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+        margin: $sc-margin-lv6 auto $sc-margin-lv2;
+    }
+
+    @media (min-width: $screen-md-min) {
+        display: none;
+    }
+}

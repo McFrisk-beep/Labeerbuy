@@ -1,0 +1,33 @@
+// Edited for Posh Theme
+
+.header-simplified-header {
+	min-height: $sc-mobile-header-height;
+    padding: $sc-padding-lv3 0;
+	background-color: $sc-header-background-color;
+
+	@media (min-width: $screen-md-min) {
+		min-height: $sc-main-navigation-height;
+	}
+}
+
+.header-simplified-header-logo {
+	text-align: center;
+
+	// resize image to fit container
+	& .header-logo {
+		display: initial;
+	}
+	& .header-logo-image {
+		width: $sc-mobile-header-logo-width - $sc-mobile-header-logo-left-padding;
+		display: initial;
+		max-width: 100%;
+		max-height: 100%;
+		
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			width: $sc-tablet-header-logo-width - $sc-mobile-header-logo-left-padding;
+		}
+		@media (min-width: $screen-md-min) {
+            width: $sc-desktop-header-logo-width;
+		}
+	}
+}
