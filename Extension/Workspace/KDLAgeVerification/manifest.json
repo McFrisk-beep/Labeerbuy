@@ -1,0 +1,75 @@
+{
+    "name": "KDLAgeVerification",
+    "fantasyName": "Kodella Age Verification",
+    "vendor": "Kodella",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.2.0",
+        "SCS": ">=20.2.0"
+    },
+    "version": "1.0.0",
+    "description": "Kodella Age Verification",
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/HomePage.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/HomePage/Configuration/AgeVerification.json"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/HomePage/Templates/ageverification.tpl"
+                ]
+            }
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/HomePage/Sass/_kdlageverification-homepage.scss"
+        },
+        "files": [
+            "Modules/HomePage/Sass/_kdlageverification-homepage.scss"
+        ]
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/HomePage/JavaScript/Kodella.KDLAgeVerification.HomePage.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/HomePage/JavaScript/Kodella.KDLAgeVerification.HomePage.js",
+                    "Modules/HomePage/JavaScript/Kodella.KDLAgeVerification.HomePage.Model.js",
+                    "Modules/HomePage/JavaScript/Kodella.KDLAgeVerification.HomePage.SS2Model.js",
+                    "Modules/HomePage/JavaScript/AgeVerification.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/HomePage/SuiteScript/Kodella.KDLAgeVerification.HomePage.js",
+        "files": [
+            "Modules/HomePage/SuiteScript/Kodella.KDLAgeVerification.HomePage.js",
+            "Modules/HomePage/SuiteScript/HomePage.ServiceController.js"
+        ]
+    },
+    "suitescript2": {
+        "files": [
+            "Modules/HomePage/SuiteScript2/HomePage.Service.ss"
+        ]
+    }
+}
