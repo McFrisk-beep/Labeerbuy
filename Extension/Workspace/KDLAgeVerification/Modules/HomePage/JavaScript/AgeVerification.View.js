@@ -44,7 +44,6 @@ define('AgeVerification.View'
 		}
 
 	,	redirectAgeVerification: function redirectAgeVerification(e) {
-			console.log('redirect');
 			window.location = Configuration.get("kdlageverification.redirecturl");
 		}
 
