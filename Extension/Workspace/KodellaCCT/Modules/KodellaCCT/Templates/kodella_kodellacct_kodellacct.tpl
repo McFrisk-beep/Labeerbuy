@@ -1,8 +1,8 @@
-<section class="kodellacct-info-card">
+<!--section class="kodellacct-info-card">
     <span class="kodellacct-info-card-content">
       {{message}}
     </span>
-</section>
+</section-->
 
 
 <!--
