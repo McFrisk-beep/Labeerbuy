@@ -1,0 +1,133 @@
+{
+    "name": "KodellaCCT",
+    "fantasyName": "Kodella CCT",
+    "vendor": "Kodella",
+    "type": "extension",
+    "cct": [
+        {
+            "icon": "img/cct_kodella_quote_icon.svg",
+            "settings_record": "customrecord_cct_kodella_quote",
+            "registercct_id": "cct_kodella_quote",
+            "label": "Quote",
+            "description": "Creates Quotes in SMT"
+        }
+    ],
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.2.0",
+        "SCS": ">=20.2.0"
+    },
+    "version": "1.0.0",
+    "description": "Extension for all CCT Templates and scripts",
+    "assets": {
+        "img": {
+            "files": [
+                "img/cct_kodella_quote_icon.svg"
+            ]
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/KodellaCCT.Service.ss",
+                "services/Quote.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/KodellaCCT/Configuration/KodellaCCT.json",
+            "Modules/Quote/Configuration/Quote.json"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/KodellaCCT/Templates/kodella_kodellacct_kodellacct.tpl",
+                    "Modules/Quote/Templates/kodella_kodellacct_quote.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/KodellaCCT/Templates/kodella_kodellacct_kodellacct.tpl",
+                    "Modules/Quote/Templates/kodella_kodellacct_quote.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/KodellaCCT/Templates/kodella_kodellacct_kodellacct.tpl",
+                    "Modules/Quote/Templates/kodella_kodellacct_quote.tpl"
+                ]
+            }
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/KodellaCCT/Sass/_kodellacct-kodellacct.scss",
+            "myaccount": "Modules/KodellaCCT/Sass/_kodellacct-kodellacct.scss",
+            "checkout": "Modules/KodellaCCT/Sass/_kodellacct-kodellacct.scss"
+        },
+        "files": [
+            "Modules/KodellaCCT/Sass/_kodellacct-kodellacct.scss",
+            "Modules/Quote/Sass/_kodellacct-quote.scss"
+        ]
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+            "myaccount": "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+            "checkout": "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+                    "Modules/KodellaCCT/JavaScript/KodellaCCT.View.js",
+                    "Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.js",
+                    "Modules/Quote/JavaScript/Quote.View.js",
+                    "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.Model.js",
+                    "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.SS2Model.js",
+                    "Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.Model.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+                    "Modules/KodellaCCT/JavaScript/KodellaCCT.View.js",
+                    "Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.js",
+                    "Modules/Quote/JavaScript/Quote.View.js",
+                    "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.Model.js",
+                    "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.SS2Model.js",
+                    "Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.Model.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+                    "Modules/KodellaCCT/JavaScript/KodellaCCT.View.js",
+                    "Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.js",
+                    "Modules/Quote/JavaScript/Quote.View.js",
+                    "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.Model.js",
+                    "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.SS2Model.js",
+                    "Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/KodellaCCT/SuiteScript/Kodella.KodellaCCT.KodellaCCT.js",
+        "files": [
+            "Modules/KodellaCCT/SuiteScript/Kodella.KodellaCCT.KodellaCCT.js",
+            "Modules/KodellaCCT/SuiteScript/KodellaCCT.ServiceController.js",
+            "Modules/Quote/SuiteScript/Kodella.KodellaCCT.Quote.js",
+            "Modules/Quote/SuiteScript/Quote.ServiceController.js"
+        ]
+    },
+    "suitescript2": {
+        "files": [
+            "Modules/KodellaCCT/SuiteScript2/KodellaCCT.Service.ss"
+        ]
+    }
+}
