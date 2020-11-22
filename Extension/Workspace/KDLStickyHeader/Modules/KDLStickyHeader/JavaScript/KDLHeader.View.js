@@ -29,10 +29,9 @@ define('KDLHeader.View', [
                     self.toggleHomeClass();
                 },0);
             }
-            
         })
     ,   toggleHomeClass: function() {
-            if(jQuery('.home-page').length > 0) {
+            if(window.location.pathname == "/") {
                 jQuery('#main-container').css('margin-top', -Math.abs(jQuery('#site-header').outerHeight()-jQuery('.header-top-content').outerHeight()));
             } else {
                 jQuery('#main-container').css('padding-top', 0);

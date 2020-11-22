@@ -5,9 +5,11 @@ define(
 		'KDL.KDLStickyHeader.KDLStickyHeader.View'
 	,	'KDLHeader.View'
 	,	'KDLHeaderMenu.View'
+	,	'KDLHeader.Profile.View'
 	]
 ,   function (
 		KDLStickyHeaderView
+	,	KDLHeaderProfileView
 	)
 {
 	'use strict';
