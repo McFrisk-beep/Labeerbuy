@@ -1,0 +1,6 @@
+//
+.header-main-nav {
+    @media screen and (min-width: $screen-md-min) {
+        display: none;
+    }
+}

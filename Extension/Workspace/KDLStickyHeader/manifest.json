@@ -1,0 +1,117 @@
+{
+    "name": "KDLStickyHeader",
+    "fantasyName": "KDLStickyHeader",
+    "vendor": "KDL",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.2.0",
+        "SCS": ">=20.2.0"
+    },
+    "version": "1.0.0",
+    "description": "KDLStickyHeader",
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/KDLStickyHeader.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/KDLStickyHeader/Configuration/KDLStickyHeader.json"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/KDLStickyHeader/Templates/kdl_kdlstickyheader_kdlstickyheader.tpl",
+                    "Modules/KDLStickyHeader/Templates/kdl_header.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/KDLStickyHeader/Templates/kdl_kdlstickyheader_kdlstickyheader.tpl",
+                    "Modules/KDLStickyHeader/Templates/kdl_header.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/KDLStickyHeader/Templates/kdl_kdlstickyheader_kdlstickyheader.tpl",
+                    "Modules/KDLStickyHeader/Templates/kdl_header.tpl"
+                ]
+            }
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss",
+            "myaccount": "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss",
+            "checkout": "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss"
+        },
+        "files": [
+            "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss",
+            "Modules/KDLStickyHeader/Sass/_kdl-colorgrouping.scss",
+            "Modules/KDLStickyHeader/Sass/_kdl-header.scss",
+            "Modules/KDLStickyHeader/Sass/_kdl-stickyheader.scss"
+        ]
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.js",
+            "myaccount": "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.js",
+            "checkout": "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLStickyHeader.View.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.Model.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.SS2Model.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeader.View.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeaderMenu.View.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLStickyHeader.View.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.Model.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.SS2Model.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeader.View.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeaderMenu.View.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLStickyHeader.View.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.Model.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.SS2Model.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeader.View.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeaderMenu.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/KDLStickyHeader/SuiteScript/KDL.KDLStickyHeader.KDLStickyHeader.js",
+        "files": [
+            "Modules/KDLStickyHeader/SuiteScript/KDL.KDLStickyHeader.KDLStickyHeader.js",
+            "Modules/KDLStickyHeader/SuiteScript/KDLStickyHeader.ServiceController.js"
+        ]
+    },
+    "suitescript2": {
+        "files": [
+            "Modules/KDLStickyHeader/SuiteScript2/KDLStickyHeader.Service.ss"
+        ]
+    }
+}
