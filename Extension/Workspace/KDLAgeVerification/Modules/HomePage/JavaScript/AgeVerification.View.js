@@ -32,6 +32,8 @@ define('AgeVerification.View'
 				(you'll need to deploy and activate the extension first)
 			*/
 
+			jQuery("body").css("overflow", "hidden");
+
 		}
 
 	,	events: {
@@ -40,6 +42,7 @@ define('AgeVerification.View'
 		}
 
 	,	closeAgeVerification: function closeAgeVerification(e) {
+			jQuery("body").css("overflow", "unset");
 			jQuery('.ageverification-info-card').fadeOut('slow');
 		}
 
