@@ -12,7 +12,10 @@
     "description": "KDLStickyHeader",
     "assets": {
         "img": {
-            "files": []
+            "files": [
+                "img/profile-icon.svg",
+                "img/default.jpg"
+            ]
         },
         "fonts": {
             "files": []
@@ -33,19 +36,25 @@
             "shopping": {
                 "files": [
                     "Modules/KDLStickyHeader/Templates/kdl_kdlstickyheader_kdlstickyheader.tpl",
-                    "Modules/KDLStickyHeader/Templates/kdl_header.tpl"
+                    "Modules/KDLStickyHeader/Templates/kdl_header.tpl",
+                    "Modules/KDLStickyHeader/Templates/kdl_header_menu.tpl",
+                    "Modules/KDLStickyHeader/Templates/kdl_header_profile.tpl"
                 ]
             },
             "myaccount": {
                 "files": [
                     "Modules/KDLStickyHeader/Templates/kdl_kdlstickyheader_kdlstickyheader.tpl",
-                    "Modules/KDLStickyHeader/Templates/kdl_header.tpl"
+                    "Modules/KDLStickyHeader/Templates/kdl_header.tpl",
+                    "Modules/KDLStickyHeader/Templates/kdl_header_menu.tpl",
+                    "Modules/KDLStickyHeader/Templates/kdl_header_profile.tpl"
                 ]
             },
             "checkout": {
                 "files": [
                     "Modules/KDLStickyHeader/Templates/kdl_kdlstickyheader_kdlstickyheader.tpl",
-                    "Modules/KDLStickyHeader/Templates/kdl_header.tpl"
+                    "Modules/KDLStickyHeader/Templates/kdl_header.tpl",
+                    "Modules/KDLStickyHeader/Templates/kdl_header_menu.tpl",
+                    "Modules/KDLStickyHeader/Templates/kdl_header_profile.tpl"
                 ]
             }
         }
@@ -77,7 +86,8 @@
                     "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.Model.js",
                     "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.SS2Model.js",
                     "Modules/KDLStickyHeader/JavaScript/KDLHeader.View.js",
-                    "Modules/KDLStickyHeader/JavaScript/KDLHeaderMenu.View.js"
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeaderMenu.View.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeader.Profile.View.js"
                 ]
             },
             "myaccount": {
@@ -87,7 +97,8 @@
                     "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.Model.js",
                     "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.SS2Model.js",
                     "Modules/KDLStickyHeader/JavaScript/KDLHeader.View.js",
-                    "Modules/KDLStickyHeader/JavaScript/KDLHeaderMenu.View.js"
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeaderMenu.View.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeader.Profile.View.js"
                 ]
             },
             "checkout": {
@@ -97,7 +108,8 @@
                     "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.Model.js",
                     "Modules/KDLStickyHeader/JavaScript/KDL.KDLStickyHeader.KDLStickyHeader.SS2Model.js",
                     "Modules/KDLStickyHeader/JavaScript/KDLHeader.View.js",
-                    "Modules/KDLStickyHeader/JavaScript/KDLHeaderMenu.View.js"
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeaderMenu.View.js",
+                    "Modules/KDLStickyHeader/JavaScript/KDLHeader.Profile.View.js"
                 ]
             }
         }
