@@ -1,0 +1,186 @@
+{
+	"name": "KodellaCCT",
+	"fantasyName": "Kodella CCT",
+	"vendor": "Kodella",
+	"type": "extension",
+	"cct": [
+		{
+			"icon": "img/cct_kodella_quote_icon.svg",
+			"settings_record": "customrecord_cct_kodella_quote",
+			"registercct_id": "cct_kodella_quote",
+			"label": "Quote",
+			"description": "Creates Quotes in SMT"
+		},
+		{
+			"icon": "img/cct_kodella_fullbanner_icon.svg",
+			"settings_record": "customrecord_cct_kodella_fullbanner",
+			"registercct_id": "cct_kodella_fullbanner",
+			"label": "FullBanner",
+			"description": "Displays a full banner on the page"
+		},
+		{
+			"icon": "img/cct_kodella_halfbanner_icon.svg",
+			"settings_record": "customrecord_cct_kodella_halfbanner",
+			"registercct_id": "cct_kodella_halfbanner",
+			"label": "HalfBanner",
+			"description": "Displays a half banner section on the page"
+		}
+	],
+	"target": "SCA,SCS",
+	"target_version": {
+		"SCA": ">=20.2.0",
+		"SCS": ">=20.2.0"
+	},
+	"version": "1.0.0",
+	"description": "Extension for all CCT Templates and scripts",
+	"assets": {
+		"img": {
+			"files": [
+				"img/cct_kodella_quote_icon.svg",
+				"img/cct_kodella_fullbanner_icon.svg",
+				"img/cct_kodella_halfbanner_icon.svg"
+			]
+		},
+		"fonts": {
+			"files": []
+		},
+		"services": {
+			"files": [
+				"services/KodellaCCT.Service.ss",
+				"services/Quote.Service.ss",
+				"services/FullBanner.Service.ss",
+				"services/HalfBanner.Service.ss"
+			]
+		}
+	},
+	"configuration": {
+		"files": [
+			"Modules/KodellaCCT/Configuration/KodellaCCT.json",
+			"Modules/Quote/Configuration/Quote.json",
+			"Modules/FullBanner/Configuration/FullBanner.json",
+			"Modules/HalfBanner/Configuration/HalfBanner.json"
+		]
+	},
+	"templates": {
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/KodellaCCT/Templates/kodella_kodellacct_kodellacct.tpl",
+					"Modules/Quote/Templates/kodella_kodellacct_quote.tpl",
+					"Modules/FullBanner/Templates/kodella_kodellacct_fullbanner.tpl",
+					"Modules/HalfBanner/Templates/kodella_kodellacct_halfbanner.tpl"
+				]
+			},
+			"myaccount": {
+				"files": [
+					"Modules/KodellaCCT/Templates/kodella_kodellacct_kodellacct.tpl",
+					"Modules/Quote/Templates/kodella_kodellacct_quote.tpl",
+					"Modules/FullBanner/Templates/kodella_kodellacct_fullbanner.tpl",
+					"Modules/HalfBanner/Templates/kodella_kodellacct_halfbanner.tpl"
+				]
+			},
+			"checkout": {
+				"files": [
+					"Modules/KodellaCCT/Templates/kodella_kodellacct_kodellacct.tpl",
+					"Modules/Quote/Templates/kodella_kodellacct_quote.tpl",
+					"Modules/FullBanner/Templates/kodella_kodellacct_fullbanner.tpl",
+					"Modules/HalfBanner/Templates/kodella_kodellacct_halfbanner.tpl"
+				]
+			}
+		}
+	},
+	"sass": {
+		"entry_points": {
+			"shopping": "Modules/KodellaCCT/Sass/_kodellacct-kodellacct.scss",
+			"myaccount": "Modules/KodellaCCT/Sass/_kodellacct-kodellacct.scss",
+			"checkout": "Modules/KodellaCCT/Sass/_kodellacct-kodellacct.scss"
+		},
+		"files": [
+			"Modules/KodellaCCT/Sass/_kodellacct-kodellacct.scss",
+			"Modules/Quote/Sass/_kodellacct-quote.scss",
+			"Modules/FullBanner/Sass/_kodellacct-fullbanner.scss",
+			"Modules/HalfBanner/Sass/_kodellacct-halfbanner.scss"
+		]
+	},
+	"javascript": {
+		"entry_points": {
+			"shopping": "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+			"myaccount": "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+			"checkout": "Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js"
+		},
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+					"Modules/KodellaCCT/JavaScript/KodellaCCT.View.js",
+					"Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.js",
+					"Modules/Quote/JavaScript/Quote.View.js",
+					"Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.Model.js",
+					"Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.SS2Model.js",
+					"Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.Model.js",
+					"Modules/FullBanner/JavaScript/Kodella.KodellaCCT.FullBanner.js",
+					"Modules/FullBanner/JavaScript/FullBanner.View.js",
+					"Modules/HalfBanner/JavaScript/Kodella.KodellaCCT.HalfBanner.js",
+					"Modules/HalfBanner/JavaScript/HalfBanner.View.js",
+					"Modules/FullBanner/JavaScript/Kodella.KodellaCCT.FullBanner.Model.js",
+					"Modules/HalfBanner/JavaScript/Kodella.KodellaCCT.HalfBanner.Model.js"
+				]
+			},
+			"myaccount": {
+				"files": [
+					"Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+					"Modules/KodellaCCT/JavaScript/KodellaCCT.View.js",
+					"Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.js",
+					"Modules/Quote/JavaScript/Quote.View.js",
+					"Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.Model.js",
+					"Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.SS2Model.js",
+					"Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.Model.js",
+					"Modules/FullBanner/JavaScript/Kodella.KodellaCCT.FullBanner.js",
+					"Modules/FullBanner/JavaScript/FullBanner.View.js",
+					"Modules/HalfBanner/JavaScript/Kodella.KodellaCCT.HalfBanner.js",
+					"Modules/HalfBanner/JavaScript/HalfBanner.View.js",
+					"Modules/FullBanner/JavaScript/Kodella.KodellaCCT.FullBanner.Model.js",
+					"Modules/HalfBanner/JavaScript/Kodella.KodellaCCT.HalfBanner.Model.js"
+				]
+			},
+			"checkout": {
+				"files": [
+					"Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.js",
+					"Modules/KodellaCCT/JavaScript/KodellaCCT.View.js",
+					"Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.js",
+					"Modules/Quote/JavaScript/Quote.View.js",
+					"Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.Model.js",
+					"Modules/KodellaCCT/JavaScript/Kodella.KodellaCCT.KodellaCCT.SS2Model.js",
+					"Modules/Quote/JavaScript/Kodella.KodellaCCT.Quote.Model.js",
+					"Modules/FullBanner/JavaScript/Kodella.KodellaCCT.FullBanner.js",
+					"Modules/FullBanner/JavaScript/FullBanner.View.js",
+					"Modules/HalfBanner/JavaScript/Kodella.KodellaCCT.HalfBanner.js",
+					"Modules/HalfBanner/JavaScript/HalfBanner.View.js",
+					"Modules/FullBanner/JavaScript/Kodella.KodellaCCT.FullBanner.Model.js",
+					"Modules/HalfBanner/JavaScript/Kodella.KodellaCCT.HalfBanner.Model.js"
+				]
+			}
+		}
+	},
+	"ssp-libraries": {
+		"entry_point": "Modules/KodellaCCT/SuiteScript/Kodella.KodellaCCT.KodellaCCT.js",
+		"files": [
+			"Modules/KodellaCCT/SuiteScript/Kodella.KodellaCCT.KodellaCCT.js",
+			"Modules/KodellaCCT/SuiteScript/KodellaCCT.ServiceController.js",
+			"Modules/Quote/SuiteScript/Kodella.KodellaCCT.Quote.js",
+			"Modules/Quote/SuiteScript/Quote.ServiceController.js",
+			"Modules/FullBanner/SuiteScript/Kodella.KodellaCCT.FullBanner.js",
+			"Modules/FullBanner/SuiteScript/FullBanner.ServiceController.js",
+			"Modules/HalfBanner/SuiteScript/Kodella.KodellaCCT.HalfBanner.js",
+			"Modules/HalfBanner/SuiteScript/HalfBanner.ServiceController.js"
+		]
+	},
+	"suitescript2": {
+		"files": [
+			"Modules/KodellaCCT/SuiteScript2/KodellaCCT.Service.ss"
+		]
+	},
+	"path": "SuiteScripts/Deploy_Extensions/Kodella/KodellaCCT@1.0.0",
+	"activation_id": "4",
+	"extension_id": "2601"
+}

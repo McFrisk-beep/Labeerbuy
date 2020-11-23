@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "Quote.config": {
+            "group": "extensions",
+            "subtab": "Quote_subtab",
+            "type": "string",
+            "title": "Quote_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

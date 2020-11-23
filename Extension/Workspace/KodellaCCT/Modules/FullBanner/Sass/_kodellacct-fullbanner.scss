@@ -1,0 +1,104 @@
+/*
+	Sass Application Entry Point
+	Link all your sass dependencies in the right order
+
+	Example:
+	@import "other-sass-file.scss";
+	@import "../../<other module>/Sass/other-sass-file.scss";
+*/ 
+
+.fullbanner-info-card {
+    @extend .info-card;
+}
+
+.fullbanner-info-card-content {
+    @extend .info-card-content;
+    color: $sc-color-secondary;
+    font-weight: bold;
+}
+
+.kdl-cct-fullbanner {
+	.hp_banner {
+		position: relative;
+	  }
+	  .hp_banner_container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: 5%;
+		margin-right: 5%;
+
+		&.kdl_left_align {
+			left: 0;
+		}
+
+		&.kdl_right_align {
+			right: 0;
+		}
+
+		&.kdl_mid_align {
+
+			@media (min-width: 701px) {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+		
+	  }
+	  .hp_banner_text {
+		width: 300px;
+		  padding: 20px;
+		  &.kdl_with_bg {
+			background: #FBFCF9;
+		  }
+	  }
+	  .hp_banner_text a {
+		padding-bottom: 5px;
+		border-bottom: 1px solid #49443E;
+	  }
+	  @media (max-width: 700px) {
+		.hp_banner_container {
+		  position: unset;
+		  margin-right: unset;
+		}
+		.hp_banner_text {
+		  background: unset;
+		}
+	  }
+	  .cta {
+		  text-transform: uppercase;
+	  }
+	  
+	//For bottom alignment
+	.hp_banner_container {
+		&.kdl_bottom_align {
+			position: unset;
+			margin: unset;
+			
+			.hp_banner_text {
+				background: unset;
+				width: auto;
+				max-width: 416px;
+			}
+		}
+	}
+
+	//Mobile
+	.kdl-cctheroimg-mobile {
+		display: none;
+	}
+	@media screen and (max-width: 767px) {
+		.kd_img_mobile {
+			.kdl-cctheroimg-desktop {
+				display: none;
+			}
+			.kdl-cctheroimg-mobile {
+				display: block;
+			}
+		}
+	}
+}

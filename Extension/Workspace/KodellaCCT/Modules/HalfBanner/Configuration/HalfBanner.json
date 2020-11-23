@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "HalfBanner.config": {
+            "group": "extensions",
+            "subtab": "HalfBanner_subtab",
+            "type": "string",
+            "title": "HalfBanner_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}
