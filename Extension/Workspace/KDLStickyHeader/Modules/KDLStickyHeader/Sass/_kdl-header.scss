@@ -101,3 +101,30 @@ button {
         margin-left: 0;
     }
 }
+
+.header-menu-level-container {
+    position: fixed;
+    top: 77px;
+    left: 0px;
+    width: -webkit-fill-available;
+    height: 300px;
+    background-color: $sc-header-background-color;
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    .header-menu-level2 {
+        display: flex;
+        justify-content: center;
+
+        & > li {
+            display: flex;
+            margin-right: 20px;
+            max-width: 350px;
+
+            .header-menu-level-2-text {
+                max-width: 200px;
+                text-align: center;
+            }
+        }
+    }
+}
