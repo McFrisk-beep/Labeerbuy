@@ -1,0 +1,72 @@
+{
+    "type": "object",
+    "group": {
+        "id": "kodellaApp",
+        "title": "Kodella Extensions",
+        "description": "Configuration for Kodella Extensions"
+    },
+    "subtab": {
+      "id": "kdlsuggestabeer",
+      "title": "Kodella Suggest A Beer",
+      "description": "Kodella Suggest A Beer",
+      "group": "kodellaApp"
+    },
+    "properties": {
+      "kdlsuggestabeer.enable": {
+        "group": "kodellaApp",
+        "subtab": "kdlsuggestabeer",
+        "type": "boolean",
+        "title": "Enable Suggest A Beer",
+        "description": "Enable Suggest A Beer",
+        "default": false
+      },
+      "kdlsuggestabeer.errormessage": {
+        "group": "kodellaApp",
+        "subtab": "kdlsuggestabeer",
+        "type": "string",
+        "title": "Error Message",
+        "description": "Error message for invalid input",
+        "default": "Please answer atleast one question."
+      },
+      "kdlsuggestabeer.criteria": {
+        "group": "kodellaApp",
+        "subtab": "kdlsuggestabeer",
+        "type": "array",
+        "title": "Suggestion Criteria",
+        "description": "Criteria builder for Beer Suggestion",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label of the question"
+            },
+            "field": {
+              "type": "string",
+              "title": "Field",
+              "description": "Item field to search"
+            },
+            "operator": {
+              "type": "string",
+              "title": "operator",
+              "description": "Operator to be used for search",
+              "enum": ["contains", "is", "startswith", "anyof"]
+            }
+          }
+        },
+        "default": [
+          {
+            "label": "What type of beer do you usually like? (Porter, Stout, Wheat, etc.)",
+            "field": "storedescription,displayname",
+            "operator": "contains"
+          },
+          {
+            "label": "Which brands do you usually buy?",
+            "field": "storedescription,displayname",
+            "operator": "contains"
+          },
+        ]
+      }
+    }
+  }
