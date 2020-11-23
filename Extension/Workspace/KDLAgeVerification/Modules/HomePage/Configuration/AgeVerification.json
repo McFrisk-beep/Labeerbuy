@@ -1,17 +1,12 @@
 {
     "type": "object",
-    "group": {
-        "id": "kodellaApp",
-        "title": "Kodella Extensions",
-        "description": "Configuration for Kodella Extensions"
-    },
     "subtab": {
         "id": "kdlageverification",
         "title": "Kodella Age Verification",
         "description": "Configuration for Footer links",
         "group": "kodellaApp"
     },
-    "properties": { 
+    "properties": {
         "kdlageverification.redirecturl": {
             "group": "kodellaApp",
             "subtab": "kdlageverification",

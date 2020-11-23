@@ -1,0 +1,83 @@
+{
+    "name": "KDLSuggestABeer",
+    "fantasyName": "KDL Suggest A Beer",
+    "vendor": "Kodella",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.2.0",
+        "SCS": ">=20.2.0"
+    },
+    "description": "KDL Suggest A Beer",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/SuggestABeer.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/SuggestABeer/Configuration/SuggestABeer.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/SuggestABeer/Sass/_kdlsuggestabeer-main.scss"
+        },
+        "files": [
+            "Modules/SuggestABeer/Sass/_kdlsuggestabeer-main.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SuggestABeer/Templates/kodella_kdlsuggestabeer_main.tpl",
+                    "Modules/SuggestABeer/Templates/kodella_kdlsuggestabeer_cell.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/SuggestABeer/JavaScript/Kodella.KDLSuggestABeer.Main.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SuggestABeer/JavaScript/Kodella.KDLSuggestABeer.Collection.js",
+                    "Modules/SuggestABeer/JavaScript/Kodella.KDLSuggestABeer.Main.js",
+                    "Modules/SuggestABeer/JavaScript/Kodella.KDLSuggestABeer.Main.Model.js",
+                    "Modules/SuggestABeer/JavaScript/Kodella.KDLSuggestABeer.Main.SS2Model.js",
+                    "Modules/SuggestABeer/JavaScript/Kodella.KDLSuggestABeer.Main.View.js",
+                    "Modules/SuggestABeer/JavaScript/Kodella.KDLSuggestABeer.Router.js",
+                    "Modules/SuggestABeer/JavaScript/Kodella.KDLSuggestABeer.List.View.js",
+                    "Modules/SuggestABeer/JavaScript/Kodella.KDLSuggestABeer.Cell.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SuggestABeer/SuiteScript/Kodella.KDLSuggestABeer.Main.js",
+        "files": [
+            "Modules/SuggestABeer/SuiteScript/Kodella.KDLSuggestABeer.Main.js",
+            "Modules/SuggestABeer/SuiteScript/SuggestABeer.ServiceController.js",
+            "Modules/SuggestABeer/SuiteScript/Kodella.KDLSuggestABeer.Model.js"
+        ]
+    },
+    "local_folder": "Workspace\\KDLSuggestABeer",
+    "suitescript2": {
+        "files": [
+            "Modules/Main/SuiteScript2/Main.Service.ss"
+        ]
+    }
+}
