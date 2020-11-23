@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "KDLStickyHeader.config": {
+            "group": "extensions",
+            "subtab": "KDLStickyHeader_subtab",
+            "type": "string",
+            "title": "KDLStickyHeader_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

@@ -1,0 +1,103 @@
+//
+button {
+    outline: none;
+}
+
+.facets-facet-browse-facets {
+    box-shadow: none;
+}
+
+.header-main-nav {
+    @media screen and (min-width: $screen-md-min) {
+        display: none;
+    }
+}
+.header-menu-locator {
+    .storelocator-accesspoints-headerlink-link  {
+        float: none;
+        padding: 0;
+        margin: 0;
+        min-width: initial;
+        .storelocator-accesspoints-headerlink-link-icon {
+            display: block;
+            color: $sc-header-link-text-color;
+            margin-top: 1px;
+
+            &:hover {
+                color: $sc-header-link-hover-text-color;
+            }
+        }
+        .storelocator-accesspoints-headerlink-link-text {
+            display: none;
+        }
+    }
+}
+.header-sidebar-wrapper {
+    background: $sc-color-primary;
+}
+.header-sidebar-links {
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+@media screen and (min-width: $screen-md-min)  {
+    .header-logo-nav-container  {
+        .header-menu-profile {
+            .kdl-header-profile-login-link  {
+                &::before {
+                    content: '';
+                    background-color: $sc-header-icon-color;
+                    -webkit-mask-image: url(getExtensionAssetsPath('img/profile-icon.svg'));
+                    mask-image: url(getExtensionAssetsPath('img/profile-icon.svg'));
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                }
+                .header-profile-menu-login {
+                    display: none;
+                }
+                &:hover {
+                    &::before {
+                        background-color: $sc-header-icon-hover-color;
+                    }
+                }
+            }
+        }
+        .header-menu-cart,
+        .header-menu-search {
+            border-left: 0;
+            margin: 0;
+        }
+
+        .header-mini-cart-menu-cart-link  {
+            line-height: initial;
+            height: auto;
+        }
+
+        .header-menu-search-link {
+            margin-top: 5px;
+            float: left;
+            line-height: initial;
+        }
+    }
+    .header-right-menu-also  {
+        align-items: center;
+        & > div {
+            padding: 0 7px;
+        }
+    }
+}
+
+@media screen and (max-width: $screen-sm-max)  {
+    .header-right-menu .header-menu-locator  .storelocator-accesspoints-headerlink-link {
+        margin-bottom: 6px;
+        min-width: auto;
+        padding: 0;
+    }
+    .storelocator-accesspoints-headerlink-link-icon {
+        margin-top: -3px;
+    }
+    .header-menu-mobile-cart  {
+        margin-left: 0;
+    }
+}
