@@ -3,13 +3,11 @@ define(
 	'Kodella.KDLAgeVerification.HomePage'
 ,   [
 		'AgeVerification.View'
-	,	'Home.View'
-	,	'GlobalViews.Confirmation.View'
+	,	'SC.Configuration'
 	]
 ,   function (
 		AgeVerificationView
-	,	HomeView
-	,	GlobalViewsConfirmationView
+	,	Configuration
 	)
 {
 	'use strict';
@@ -27,17 +25,9 @@ define(
 			
 			if(layout)
 			{
-
-			    _.extend(HomeView.prototype, {
-			        initialize: _.wrap(HomeView.prototype.initialize, function initialize (fn) {
-			            fn.apply(this, _.toArray(arguments).slice(1));
-			            this.on('afterViewRender', function () {
-			                var view = new AgeVerificationView();
-			                layout.showContent(view, {showInModal: false});
-			            });
-			        })
-			    });
-
+				layout.addChildView('Header', function() { 
+					return new AgeVerificationView({ container: container });
+				});
 			}
 
 		}

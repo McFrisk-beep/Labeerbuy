@@ -1,7 +1,8 @@
 // @module Kodella.KDLAgeVerification.HomePage
 define('AgeVerification.View'
 ,	[
-	'ageverification.tpl'
+		'ageverification.tpl'
+	,	'Home.View'
 	
 	,	'Kodella.KDLAgeVerification.HomePage.SS2Model'
 	,	'SC.Configuration'
@@ -9,7 +10,8 @@ define('AgeVerification.View'
 	,	'jQuery'
     ]
 , function (
-	ageverification_tpl
+		ageverification_tpl
+	,	HomeView
 	
 	,	HomePageSS2Model
 	,	Configuration
@@ -30,7 +32,6 @@ define('AgeVerification.View'
 				(you'll need to deploy and activate the extension first)
 			*/
 
-      		Configuration.get("kdlklarna.merchconfirmation")
 		}
 
 	,	events: {
@@ -39,7 +40,6 @@ define('AgeVerification.View'
 		}
 
 	,	closeAgeVerification: function closeAgeVerification(e) {
-			//jQuery('.ageverification-info-card').hide();
 			jQuery('.ageverification-info-card').fadeOut('slow');
 		}
 
@@ -50,7 +50,9 @@ define('AgeVerification.View'
 		//@method getContext @return Kodella.KDLAgeVerification.HomePage.View.Context
 	,	getContext: function getContext()
 		{
-			
+			return {
+				bgimg: 'img/beer-beach.jpg'
+			}
 		}
 	});
 });

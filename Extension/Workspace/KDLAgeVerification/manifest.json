@@ -2,19 +2,15 @@
     "name": "KDLAgeVerification",
     "fantasyName": "Kodella Age Verification",
     "vendor": "Kodella",
-    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=20.2.0",
         "SCS": ">=20.2.0"
     },
+    "version": "1.0.0",
     "description": "Kodella Age Verification",
-    "skins": [],
     "assets": {
-        "img": {
-            "files": []
-        },
         "fonts": {
             "files": []
         },
@@ -22,19 +18,16 @@
             "files": [
                 "services/HomePage.Service.ss"
             ]
+        },
+        "img": {
+            "files": [
+                "img/beer-beach.jpg"
+            ]
         }
     },
     "configuration": {
         "files": [
             "Modules/HomePage/Configuration/AgeVerification.json"
-        ]
-    },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/HomePage/Sass/_kdlageverification-homepage.scss"
-        },
-        "files": [
-            "Modules/HomePage/Sass/_kdlageverification-homepage.scss"
         ]
     },
     "templates": {
@@ -45,6 +38,14 @@
                 ]
             }
         }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/HomePage/Sass/_kdlageverification-homepage.scss"
+        },
+        "files": [
+            "Modules/HomePage/Sass/_kdlageverification-homepage.scss"
+        ]
     },
     "javascript": {
         "entry_points": {
@@ -68,7 +69,6 @@
             "Modules/HomePage/SuiteScript/HomePage.ServiceController.js"
         ]
     },
-    "local_folder": "Workspace\\KDLAgeVerification",
     "suitescript2": {
         "files": [
             "Modules/HomePage/SuiteScript2/HomePage.Service.ss"
