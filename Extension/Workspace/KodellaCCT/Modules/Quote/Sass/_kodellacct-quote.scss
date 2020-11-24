@@ -16,3 +16,38 @@
     color: $sc-color-secondary;
     font-weight: bold;
 }
+
+.home-page {
+	.cms-content-cct_kodella_quote  {
+		padding: 0;
+	}
+}
+
+.quoteDiv {
+	position: relative;
+    display: flex;
+	.qd-bgimg {
+		text-align: center;
+		padding: 30px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+	}
+	.quoteText  {
+		position: relative;
+		z-index: 1;
+		max-width: 650px;
+		text-align: center;
+		margin: 0 auto;
+		padding: 30px 15px;
+	}
+	h1 {
+		color: #fafafa;  /* editable({"type": "string", "label": "Quotes Text Colors Opacity"}) */
+	}
+	h4 {
+		color: #fafafa;  /* editable({"type": "string", "label": "Quotes Author Colors Opacity"}) */
+	}
+}

@@ -1,7 +1,12 @@
-<div class="quoteDiv" style="text-align: center;padding: 30px;background-image: url({{overlayimg}});">
-	<h1>"{{quote}}"</h1>
-	<h4>-</h4>
-	<h4>{{author}}</h4>
+<div class="quoteDiv">
+  {{#if overlayimg}}
+    <div class="qd-bgimg" style="background-image: url({{overlayimg}});"></div>
+  {{/if}}
+  <div class="quoteText">
+    <h1>&#8220;{{quote}}&#8221;</h1>
+    <h4>-</h4>
+    <h4>{{author}}</h4>
+  </div>
 </div>
 
 
