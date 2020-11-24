@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "FullBanner.config": {
+            "group": "extensions",
+            "subtab": "FullBanner_subtab",
+            "type": "string",
+            "title": "FullBanner_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

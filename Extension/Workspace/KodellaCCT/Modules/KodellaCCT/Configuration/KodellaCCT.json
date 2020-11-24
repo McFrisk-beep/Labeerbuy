@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "KodellaCCT.config": {
+            "group": "extensions",
+            "subtab": "KodellaCCT_subtab",
+            "type": "string",
+            "title": "KodellaCCT_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

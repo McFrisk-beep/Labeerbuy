@@ -179,11 +179,11 @@ define('Kodella.KDLSuggestABeer.Main.View'
 						// });
 
 						// newChildView.setElement('.sab-items').render();
-						self.render();
-						// var collectionChildView = self.getChildViewInstance('Sab.Items');
-						// console.log('collectionChildView', collectionChildView);
-            // collectionChildView.collection = itemCollection;
-            // collectionChildView.render();
+						// self.render();
+						var collectionChildView = self.getChildViewInstance('Sab.Items');
+						console.log('collectionChildView', collectionChildView);
+            collectionChildView.collection = itemCollection;
+            collectionChildView.render();
 
 					})
 
