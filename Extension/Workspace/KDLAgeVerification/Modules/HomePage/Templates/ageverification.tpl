@@ -1,18 +1,19 @@
 <section class="ageverification-info-card">
 
-	<div class="ageverification-box" style=""><h1>Welcome to La Beer Buy!</h1>
-        <div class="ageverification-info-card-content">By entering this website, you agree that you're of legal drinking age which is 21 or older.</div>
+	<div class="ageverification-box" style="">
+		<h1>{{translate 'Hey Drunkie!'}}</h1>
+		<h2>{{translate 'Welcome to LaBeerBuy'}}</h2>
+        <div class="ageverification-info-card-content">{{translate "By entering this website, you agree that you're of legal drinking age which is 21 or older."}}</div>
         <div>
     	    <span>
-    	    	<button class="btn btn-primary ageverification-legal" type="submit" data-action="legal">Yes, I'm Legal</button>
+    	    	<button class="button-primary button-large ageverification-legal" type="submit" data-action="legal">{{translate "Yes, I'm Legal"}}</button>
     	    </span>
     	    <span>
-    		    <button class="btn btn-primary ageverification-not-legal" type="submit" data-action="not-legal">Not Yet</button>
+    		    <button class="button-primary button-large ageverification-not-legal" type="submit" data-action="not-legal">{{translate "Not Yet"}}</button>
     		</span>
     	</div>
     </div>
-
-	<div class="ageverification-background" style="background-image: url({{getThemeAssetsPath bgimg}});"></div>
+	<div class="ageverification-background" style="background-image: url({{getExtensionAssetsPath "img/beer-beach.jpg"}});"></div>
 
 </section>
 
