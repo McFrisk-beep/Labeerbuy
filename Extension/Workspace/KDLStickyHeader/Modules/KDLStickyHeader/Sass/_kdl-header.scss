@@ -40,6 +40,13 @@ button {
     padding-top: 30px;
 }
 
+.header-logo-nav-container {
+    display: flex;
+    //border: solid 1px red;
+    height: 100px;
+    transition: 0.2s;
+}
+
 @media screen and (min-width: $screen-md-min)  {
     .header-logo-nav-container  {
         .header-menu-profile {
@@ -83,7 +90,7 @@ button {
     .header-right-menu-also  {
         align-items: center;
         & > div {
-            padding: 0 7px;
+            padding: 0 10px;
         }
     }
 }
@@ -127,4 +134,31 @@ button {
             }
         }
     }
+}
+
+.header-logo {
+    width: 140px;
+    display: flex;
+    justify-content: center;    
+}
+
+.header-logo-image {
+    display: block;
+    //max-width: $sc-mobile-header-logo-width - $sc-mobile-header-logo-left-padding; // for IE, see #106
+    max-width: 135px;
+    transition: 1s;
+
+    //@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    //    max-width: $sc-tablet-header-logo-width - $sc-mobile-header-logo-left-padding; // for IE, see #106
+    //}
+
+    //@media(min-width: $screen-md-min) {
+    //    width: auto;
+    //    max-width: $sc-desktop-header-logo-width; // for IE, see #106
+    //}
+    
+}
+
+.header-site-search {
+    position: absolute;
 }

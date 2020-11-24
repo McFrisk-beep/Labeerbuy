@@ -42,9 +42,17 @@ define('KDLHeader.View', [
             if (window.pageYOffset > this.headerSize) {
                 jQuery("#site-header").addClass("kdSticky");
                 jQuery('#main-container').css('padding-top', Math.abs(jQuery('#site-header').outerHeight()));
+
+                jQuery(".header-logo-image").css("width", "85px");
+                jQuery(".header-logo-nav-container").css("height", "60px");
+                jQuery(".header-menu-level-container").css("top", "58px");
             } else {
                 jQuery("#site-header").removeClass("kdSticky");
                 jQuery('#main-container').css('padding-top', 0);
+
+                jQuery(".header-logo-image").css("width", "135px");
+                jQuery(".header-logo-nav-container").css("height", "100px");
+                jQuery(".header-menu-level-container").css("top", "98px");
             }
         }
     });
