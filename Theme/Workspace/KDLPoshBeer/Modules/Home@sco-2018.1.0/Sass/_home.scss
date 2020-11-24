@@ -11,7 +11,8 @@
 /* Promo Area */
 .home-promo {
     display: flex; /* or inline-flex */
-    margin: $sc-margin-lv5 0;
+    //margin: $sc-margin-lv5 0;
+    margin: 0 0 $sc-margin-lv5;
     flex-wrap: wrap;
     background-color: $sc-home-promo-background-color;
 
