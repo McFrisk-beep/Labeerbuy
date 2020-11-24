@@ -2,7 +2,15 @@
 
 <div data-view="Global.BackToTop"></div>
 <div id="banner-footer" class="content-banner banner-footer" data-cms-area="global_banner_footer" data-cms-area-filters="global"></div>
-
+<section  class="kdl-newsletter-wrapper">
+	<div class="kdl-newsletter">
+	{{#if extraFooterView.showLegacyNewsletter}}
+		<div data-view="FooterContent"></div>
+	{{else}}
+		<div class="newsletter-cct-area" data-cms-area="newsletter-cct-area" data-cms-area-filters="global"></div>
+	{{/if}}
+	</div>
+</section>
 <section class="footer-wrapper">
 	<div class="footer-content-wrapper">
 		<div class="footer-logo-social">
@@ -20,14 +28,6 @@
 	            </ul>
 	        </div>
 	        {{/if}}
-		</div>
-
-		<div class="footer-content-newsletter">
-      {{#if extraFooterView.showLegacyNewsletter}}
-        <div data-view="FooterContent"></div>
-      {{else}}
-        <div class="newsletter-cct-area" data-cms-area="newsletter-cct-area" data-cms-area-filters="global"></div>
-      {{/if}}
 		</div>
 
 		<div class="footer-content">

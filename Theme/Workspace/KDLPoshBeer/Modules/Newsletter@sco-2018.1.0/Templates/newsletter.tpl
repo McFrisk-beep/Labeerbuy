@@ -2,7 +2,8 @@
 
 	<div data-validation="control-group">
 
-		<h4 class="newsletter-subscription-form-label" for="login-email">{{translate 'Email Sign Up'}}</h4>
+		<h1 for="login-email">{{translate 'Sign up for our Newsletter'}}</h1>
+		<h2>{{translate  "Mojito Mo’fun! <br/> Trust us.  It's worth a shot (or 3)."}}</h2>
 
 		<div class="newsletter-subscription-form-container {{#if showErrorMessage}}error{{/if}}" data-validation="control">
 			<input
