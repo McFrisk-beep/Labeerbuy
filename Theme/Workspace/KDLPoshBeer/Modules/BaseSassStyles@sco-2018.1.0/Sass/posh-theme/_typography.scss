@@ -1,5 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;1,400;1,900&display=swap');
+
+
 // Font variable for secondary font applied to buttons, nav, form fields, prices, product info, header, breadcrumb
-$sc-theme-secondary-font: Playfair Display; /* editable({"type": "string", "label": "Secondary font", "description": "Additional font family used for buttons, nav, form fields, prices, product info, header, breadcrumb. Do not add multiple fonts separated by commas."}) */
+/*$sc-theme-secondary-font: Playfair Display;*/ /* editable({"type": "string", "label": "Secondary font", "description": "Additional font family used for buttons, nav, form fields, prices, product info, header, breadcrumb. Do not add multiple fonts separated by commas."}) */
+$sc-theme-secondary-font: 'Lato', sans-serif;
+
 
 // Font variables for body element
 $sc-body-font-family: $sc-font-family; /* editable({"type": "string", "label": "Font family"}) */

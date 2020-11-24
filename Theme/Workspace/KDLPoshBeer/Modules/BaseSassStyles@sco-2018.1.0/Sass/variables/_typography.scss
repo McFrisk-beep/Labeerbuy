@@ -46,7 +46,14 @@ $sc-font-size-xxxl: 1.73rem;
 $sc-font-size-xxxxl: 2rem;
 
 // Font family
-$sc-font-family: "Assistant", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;1,400;1,900&display=swap');
+
+
+$sc-font-family: 'Lato', sans-serif;
+
+/*$sc-font-family: "Assistant", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 
 // Font weight
 $sc-font-weight-light: 300;
