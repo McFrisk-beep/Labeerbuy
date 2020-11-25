@@ -17,16 +17,20 @@ $(document).ready( function(){
 					<a class="{{class}}" {{objectToAtrributes this}}>{{translate text}}</a>
 					{{#if categories}}
 					<ul class="header-menu-level-container">
-						<li>
-							<ul class="header-menu-level2">
+						<li style="
+						display: flex;
+    					justify-content: center;">
+							<ul class="header-menu-level2" style="margin-right: 15px;">
+								<li style="padding: 7px 20px;">SHOP BY CATEGORY</li>
+								<li style="padding: 7px 20px;"><hr style="width: 100%; height: 5px;"></li>
 								{{#each categories}}
 								<li {{#if categories}}class="categories-menu-arrow"{{/if}}>
 									<!-- <img src="{{resizeImage getThemeAssetsPath 'img/default.jpg'}}" /> -->
-									<img src="{{getThemeAssetsPath 'img/default.jpg'}}?resizeid=12&resizeh=150&resizew=225" />
+									<!-- <img src="{{getThemeAssetsPath 'img/default.jpg'}}?resizeid=12&resizeh=150&resizew=225" /> -->
 									<a class="{{class}}" {{objectToAtrributes this}}>
 										<div>{{translate text}}</div>
-										<hr>
-										<i class="header-menu-level-2-text">"Proin risus dui, lobortis ut nunc eu, euismod tempus purus."</i>
+										<!-- <hr>
+										<i class="header-menu-level-2-text">"Proin risus dui, lobortis ut nunc eu, euismod tempus purus."</i> -->
 									</a>
 										{{#if categories}}
 											<ul class="header-menu-level3">
@@ -39,6 +43,34 @@ $(document).ready( function(){
 										{{/if}}
 								</li>
 								{{/each}}
+							</ul>
+							<ul class="header-menu-level2" style="margin-right: 15px;">
+								<li style="padding: 7px 20px;">SHOP BY BRAND</li>
+								<li style="padding: 7px 20px;"><hr style="width: 100%; height: 5px;"></li>
+								<li>
+									<a href="#"class="header-menu-level2-anchor">
+										<div>Coors</div>
+									</a>
+								</li>
+								<li>
+									<a href="#"class="header-menu-level2-anchor">
+										<div>Engkanto</div>
+									</a>
+								</li>
+								<li>
+									<a href="#"class="header-menu-level2-anchor">
+										<div>Tiger</div>
+									</a>
+								</li>
+							</ul>
+							<ul class="header-menu-level2" style="margin-right: 15px;">
+								<li style="padding: 7px 20px;">FEATURED PRODUCT</li>
+								<li style="padding: 7px 20px;"><hr style="width: 100%; height: 5px;"></li>
+								<li>
+									<a href="#"class="header-menu-level2-anchor">
+										<img src="{{getThemeAssetsPath 'img/default.jpg'}}?resizeid=12&resizeh=150&resizew=225" />
+									</a>
+								</li>
 							</ul>
 						</li>
 					</ul>

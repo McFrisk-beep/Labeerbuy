@@ -4,14 +4,13 @@
       <img class="kdl-animate img-in-view kdl-cctheroimg-desktop" src="{{bannerimage}}">
     </div>
     <div class="hp_banner_container {{alignment}}">
-      <div class="hp_banner_text">
-        <h1 class="kd-heading-4">{{{header}}}</h1>
-        <br>
+      <div class="hp_banner_text {{#if withBG}}kdl_with_bg{{/if}}">
+        {{#if bgcolor}}<i style="background-color: {{bgcolor}}"></i>{{/if}}
         <div>
-        <p class="kd-cct-fb-paragraph">{{{paragraph}}}</p>
+          <h1 class="kd-heading-4">{{{header}}}</h1>
+          <p class="kd-cct-fb-paragraph">{{{paragraph}}}</p>
+          <a href="{{linkurl}}" class="button-primary button-large">{{linklabel}}</a>
         </div>
-        <br>
-        <a href="{{linkurl}}" class="cta">{{linklabel}}</a>
       </div>
     </div>
   </div>

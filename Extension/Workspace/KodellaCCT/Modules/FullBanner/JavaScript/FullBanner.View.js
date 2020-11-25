@@ -64,20 +64,31 @@ define('Kodella.KodellaCCT.FullBanner.View'
 			var textAlignment = this.settings.custrecord_bannerpargalignment;
 			var selectedAlignment = 'kdl_left_align';
 
-			if(textAlignment == 1) {
-				selectedAlignment = 'kdl_left_align';
-			} else if (textAlignment == 2) {
-				selectedAlignment = 'kdl_mid_align';
-			} else if (textAlignment == 3) {
+			if(textAlignment == 2) {
 				selectedAlignment = 'kdl_right_align';
+			} else if (textAlignment == 3) {
+				selectedAlignment = 'kdl_mid_align';
+			} else if (textAlignment == 4) {
+				selectedAlignment = 'kdl_bottom_align';
 			}
+			
+			//Toggle Color
+			var toggleColor = this.settings.custrecord_bannerbackground;
+			var toggleColorText = false;
 
+			if(toggleColor == 'T') {
+				toggleColorText = true;
+			}
+			
 			return {
 				bannerimage: this.settings.custrecord_bannerimage_url,
 				paragraph: this.settings.custrecord_bannerparagraph,
 				linkurl: this.settings.custrecord_bannerlinkurl,
 				linklabel: this.settings.custrecord_bannerlinklabel,
-				alignment: selectedAlignment
+				alignment: selectedAlignment,
+				withBG: toggleColorText,
+				bgcolor: this.settings.custrecord_bannercolor,
+				header: this.settings.custrecord_bannerheader
 			};
 		}
 	});
