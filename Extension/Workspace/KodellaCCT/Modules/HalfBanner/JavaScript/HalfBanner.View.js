@@ -48,20 +48,21 @@ define('Kodella.KodellaCCT.HalfBanner.View'
 
 	,	getContext: function getContext()
 		{
-			var message = 'Hello World I\'m a CCT!!';
+			//Alignment
+			var textAlignment = this.settings.custrecord_halfposition;
+			var selectedAlignment = 'kdl_right_align';
 
-			//example of how to access context data from the item
-			if (this.contextData.item)
-			{
-				var item = this.contextData.item();
-				message = 'Special Offer!! ' + item.keyMapping_name + ' at $' + item.keyMapping_price + '.';
+			if(textAlignment == 2) {
+				selectedAlignment = 'kdl_left_align';
 			}
-
-			// if you would want to get the settings from the SMT Panel you would consult
-			// var field_value = this.settings.custrecord_<id of the custom field in the cct record>
-
+			
 			return {
-				message: message
+				bannerimage: this.settings.custrecord_halfimage_url,
+				paragraph: this.settings.custrecord_halfdescription,
+				linkurl: this.settings.custrecord_halfurl,
+				linklabel: this.settings.custrecord_halfurllabel,
+				alignment: selectedAlignment,
+				header: this.settings.custrecord_halfheader
 			};
 		}
 	});
