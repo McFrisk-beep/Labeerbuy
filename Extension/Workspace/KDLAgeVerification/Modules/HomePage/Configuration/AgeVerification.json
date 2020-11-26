@@ -1,10 +1,5 @@
 {
     "type": "object",
-    "group": {
-        "id": "kodellaApp",
-        "title": "Kodella Extensions",
-        "description": "Configuration for Kodella Extensions"
-    },
     "subtab": {
         "id": "kdlageverification",
         "title": "Kodella Age Verification",
@@ -12,6 +7,14 @@
         "group": "kodellaApp"
     },
     "properties": {
+        "kdlageverification.enable": {
+          "group": "kodellaApp",
+          "subtab": "kdlageverification",
+          "type": "boolean",
+          "title": "Enable Age Verification",
+          "description": "Enable Age Verification",
+          "default": false
+        },
         "kdlageverification.redirecturl": {
             "group": "kodellaApp",
             "subtab": "kdlageverification",
