@@ -7,6 +7,7 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 	,	'Kodella.KodellaCCT.ProductCarousel.Collection'
 	,	'kodella_kodellacct_productcarousel.tpl'
 	,	'SC.Configuration'
+	,	'Profile.Model'
 
 	,	'jQuery'
 	,	'underscore'
@@ -16,6 +17,7 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 	,	KDCCTCollection
 	,	kodella_kodellacct_productcarousel_tpl
 	,	Configuration
+	,	ProfileModel
 
 	,	jQuery
 	,	_
@@ -66,8 +68,8 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 			if (SC.ENVIRONMENT.jsEnvironment === 'browser') {
 				window.setTimeout(function timeout() {
 					if(viewWidth <= 767) {
-						carouselConfig.maxSlides = 2;
-						carouselConfig.slideWidth = Math.floor((containerWidth) / 2);
+						carouselConfig.maxSlides = 1;
+						carouselConfig.slideWidth = Math.floor((containerWidth) / 1);
 						_.initBxSlider(self.$('.kdlpc-slider'), carouselConfig);
 					}
 					if(viewWidth >= 768 && viewWidth <= 1199) {
@@ -133,6 +135,7 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 			,	linklabel: this.settings.custrecord_productlinklabel
 			,	linkurl: this.settings.custrecord_productlink
 			,	items: items
+			,	showprice: !ProfileModel.getInstance().hidePrices()
 			};
 		}
 	});
