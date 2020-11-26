@@ -52,7 +52,6 @@ define('Kodella.KDLSuggestABeer.Main.View'
 			// 	self.message = result.message;
 			// 	self.render();
       		// });
-			this.itemsDisplayOptions = Utils.deepCopy(Configuration.get('itemsDisplayOptions'));
 
 		}
 
@@ -66,25 +65,6 @@ define('Kodella.KDLSuggestABeer.Main.View'
 	, childViews: {
 		 'Sab.Items': function () {
 		 			var self = this;
-		// 			var display_option = _.find(this.itemsDisplayOptions, function (option) {
-		// 					return option.id === self.translator.getOptionValue('display');
-		// 			});
-		// 			return new BackboneCollectionView({
-		// 					childTemplate: display_option.template,
-		// 					childView: FacetsItemCellView,
-		// 					childViewOptions: {
-		// 							application: this.application
-		// 					},
-		// 					viewsPerRow: parseInt(display_option.columns, 10),
-		// 					collection: this.model.get('items'),
-		// 					cellTemplate: facets_items_collection_view_cell_tpl,
-		// 					rowTemplate: facets_items_collection_view_row_tpl,
-		// 					template: facets_items_collection_tpl,
-		// 					context: {
-		// 							keywords: this.translator.getOptionValue('keywords')
-		// 					}
-		// 			});
-
 
 					return new BackboneCollectionView({
 						childView: KodellaKDLSuggestABeerCellView
@@ -95,30 +75,6 @@ define('Kodella.KDLSuggestABeer.Main.View'
 					,	collection: self.sabCollection
 					,	cellTemplate: kodella_kdlsuggestabeer_cell_tpl
 					});
-
-					// return new BackboneCollectionView({
-					// 	childTemplate: "facets_item_cell_grid_tpl",
-					// 	childView: FacetsItemCellView,
-					// 	childViewOptions: {
-					// 		application: self.application
-					// 	},
-					// 	viewsPerRow: 4,
-					// 	collection: self.itemCollection,
-					// 	cellTemplate: facets_items_collection_view_cell_tpl,
-					// 	rowTemplate: facets_items_collection_view_row_tpl,
-					// 	template: facets_items_collection_tpl
-					// 	// context: {
-					// 	// 		keywords: this.translator.getOptionValue('keywords')
-					// 	// }
-					// });
-
-					// return new FacetsItemsCollectionView_1.FacetsItemsCollectionView({
-					// 		application: self.application,
-					// 		// keywords: this.translator.getOptionValue('keywords'),
-					// 		collection: self.collection,
-					// 		viewsPerRow: 4,
-					// 		cellViewTemplate: "facets_item_cell_grid_tpl"
-					// });
 		 	}
 		}
 
@@ -142,16 +98,8 @@ define('Kodella.KDLSuggestABeer.Main.View'
 				var fetchPromise;
         fetchPromise = sabCollection.fetch({data:{'sabQuery':JSON.stringify(arrSabQuery)}});
 				fetchPromise.done(function promiseDone() {
-					console.log('sabCollection', sabCollection);
-
 					var arrInternalId = _.map(sabCollection.models, function(tisModel){ return tisModel.get('internalid') });
-					console.log('arrInternalId', arrInternalId);
 					var strInternalids = arrInternalId.join(',');
-					console.log('strInternalids', strInternalids);
-					// var	display_option = _.find(self.itemsDisplayOptions, function (option)
-					// {
-					// 	return option.id === self.translator.getOptionValue('display');
-					// });
 
 					var itemCollection = new ItemCollection();
 					var query = {
@@ -160,34 +108,13 @@ define('Kodella.KDLSuggestABeer.Main.View'
 					}
 					var fetchPromise2 = itemCollection.fetch({data:query})
 					fetchPromise2.done(function(collectionResult){
-						console.log('itemCollection', itemCollection);
 						self.sabCollection = itemCollection;
-						// var newChildView = new BackboneCollectionView({
-						// 	// childTemplate: display_option.template,
-						// 	childView: FacetsItemCellView,
-						// 	childViewOptions: {
-						// 			application: this.application
-						// 	},
-						// 	viewsPerRow: 4,
-						// 	collection: itemCollection,
-						// 	cellTemplate: facets_items_collection_view_cell_tpl,
-						// 	rowTemplate: facets_items_collection_view_row_tpl,
-						// 	template: facets_items_collection_tpl
-						// 	// context: {
-						// 	// 		keywords: this.translator.getOptionValue('keywords')
-						// 	// }
-						// });
 
-						// newChildView.setElement('.sab-items').render();
-						// self.render();
 						var collectionChildView = self.getChildViewInstance('Sab.Items');
-						console.log('collectionChildView', collectionChildView);
             collectionChildView.collection = itemCollection;
             collectionChildView.render();
 
 					})
-
-
 
 				});
 			} else {
