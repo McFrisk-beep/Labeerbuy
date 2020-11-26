@@ -51,6 +51,9 @@ button {
     .header-logo-nav-container  {
         .header-menu-profile {
             .kdl-header-profile-login-link  {
+                position: relative;
+                display: block;
+
                 &::before {
                     content: '';
                     background-color: $sc-header-icon-color;
@@ -66,6 +69,19 @@ button {
                 &:hover {
                     &::before {
                         background-color: $sc-header-icon-hover-color;
+                    }
+                }
+
+                &.kdl-loggedin {
+                    &::after {
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                        background: $sc-header-top-background-color;
+                        border-radius: 50%;
+                        position: absolute;
+                        bottom: -2px;
+                        right: -2px;
                     }
                 }
             }

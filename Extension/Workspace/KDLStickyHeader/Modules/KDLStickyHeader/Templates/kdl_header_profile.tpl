@@ -1,10 +1,14 @@
 {{!-- Edited for Posh Theme --}}
 
 {{#if showExtendedMenu}}
+	{{#if kdlDesktop}}
+		<a class="kdl-header-profile-login-link kdl-loggedin" href="#" data-toggle="dropdown"></a>
+	{{else}}
 	<a class="header-profile-welcome-link" href="#" data-toggle="dropdown">
 		<i class="header-profile-welcome-user-icon"></i>
 		{{translate 'Welcome <strong class="header-profile-welcome-link-name">$(0)</strong>' displayName}}
 	</a>
+	{{/if}}
 
 	{{#if showMyAccountMenu}}
 		<ul class="header-profile-menu-myaccount-container">
