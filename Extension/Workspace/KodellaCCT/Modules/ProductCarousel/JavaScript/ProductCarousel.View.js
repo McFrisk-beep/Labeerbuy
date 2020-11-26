@@ -6,6 +6,7 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 		'CustomContentType.Base.View'
 	,	'Kodella.KodellaCCT.ProductCarousel.Collection'
 	,	'kodella_kodellacct_productcarousel.tpl'
+	,	'SC.Configuration'
 
 	,	'jQuery'
 	,	'underscore'
@@ -14,6 +15,7 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 		CustomContentTypeBaseView
 	,	KDCCTCollection
 	,	kodella_kodellacct_productcarousel_tpl
+	,	Configuration
 
 	,	jQuery
 	,	_
@@ -34,8 +36,51 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 
 			var self = this;
 			self.getProductList(self.settings.custrecord_productcategory);
+			this.on('afterViewRender', this.initSliderCustom, this);
 			// call some ajax here
 			return jQuery.Deferred().resolve();
+		}
+	,	initSliderCustom: function initSliderCustom () {
+			var self = this;
+
+			var viewWidth = jQuery(window).width();
+			var containerWidth = jQuery('.kdl-productslider-content').width();
+			var carouselConfig = {
+				nextText: '<a class="kdl-next-icon"><i></i></a>',
+				prevText: '<a class="kdl-prev-icon"><i></i></a>',
+				auto: false,
+				minSlides: 1,
+				maxSlides: 4,
+				moveSlides: 1,
+				pager: false,
+				slideWidth: Math.floor((containerWidth - 20) / 4),
+				preloadImages: 'all',
+				wrapperClass:'bx-wrapper',
+				easing:'ease',
+				adaptiveHeight: true,
+				
+				// infiniteLoop: false,
+				// hideControlOnEnd: true
+			}
+			
+			if (SC.ENVIRONMENT.jsEnvironment === 'browser') {
+				window.setTimeout(function timeout() {
+					if(viewWidth <= 767) {
+						carouselConfig.maxSlides = 2;
+						carouselConfig.slideWidth = Math.floor((containerWidth) / 2);
+						_.initBxSlider(self.$('.kdlpc-slider'), carouselConfig);
+					}
+					if(viewWidth >= 768 && viewWidth <= 1199) {
+						carouselConfig.maxSlides = 3;
+						carouselConfig.slideWidth = Math.floor((containerWidth) / 3);
+						_.initBxSlider(self.$('.kdlpc-slider'), carouselConfig);
+					} else if (viewWidth >= 1200) {
+						carouselConfig.maxSlides = 4;
+						carouselConfig.slideWidth = Math.floor((containerWidth) / 4);
+						_.initBxSlider(self.$('.kdlpc-slider'), carouselConfig);
+					}
+				},0);
+			}
 		}
 	,	getProductList: function(selectedCategory){
 			var self = this;

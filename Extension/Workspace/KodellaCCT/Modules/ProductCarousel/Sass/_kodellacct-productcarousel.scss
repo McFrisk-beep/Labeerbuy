@@ -20,15 +20,20 @@
 .kdl-productslider-content {
 	text-align: center;
 	margin-bottom: 20px;
+	position: relative;
 
 	.kdlpc-slider {
 		display: flex;
 		flex-wrap: wrap;
+		margin: 0;
 
 		li {
 			list-style: none;
 			width: 25%;
-			padding: 0 15px;
+
+			& > div {
+				padding: 0 15px;
+			}
 
 			@media screen and (max-width: $screen-sm-max) {
 				width: 50%;
@@ -36,7 +41,98 @@
 
 			a {
 				margin-bottom: 15px;
+				float: left;
+				width: 100%;
+				clear: both;
+
+				img {
+					height: 100%;
+					width: auto;
+					max-height: 225px;
+				}
 			}
 		}
+	}
+
+	//Slider Arrows
+
+	.kdl-next-icon,
+	.kdl-prev-icon {
+		position: absolute;
+		width: 30px;
+		height: 65px;
+		top: 40%;
+		// top: 50%;
+		// transform: translateY(-50%);
+
+		&:hover {
+			&::before,
+			&::after {
+				background: $sc-button-primary-hover-background-color;
+			}
+		}
+	}
+
+	.kdl-prev-icon {
+		left: 0;
+		@media screen and (min-width: $screen-md-min){
+			left: -30px;	
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			width: 30px;
+			height: 3px;
+			position: absolute;
+			background: $sc-color-primary;
+		}
+
+		&::before {
+			transform: rotate(-45deg);
+			top: 21px;
+		}
+
+		&::after {
+			transform: rotate(45deg);
+			bottom: 21px;
+		}
+	}
+
+	.kdl-next-icon {
+		right: 0;
+		@media screen and (min-width: $screen-md-min){
+			right: -30px;	
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			width: 30px;
+			height: 3px;
+			position: absolute;
+			background: $sc-color-primary;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+			top: 21px;
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+			bottom: 21px;
+		}
+	}
+
+	.kdl-next-icon.disabled,
+	.kdl-prev-icon.disabled {
+		display: none;
+	}
+
+	.control-text {
+		display: none;
 	}
 }

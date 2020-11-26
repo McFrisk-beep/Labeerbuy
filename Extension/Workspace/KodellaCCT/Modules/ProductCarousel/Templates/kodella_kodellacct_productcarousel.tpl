@@ -4,10 +4,12 @@
   <ul  class="kdlpc-slider">
     {{#each items}}
       <li>
-        <a href="{{_url}}" class="kdlpc-image hvr-float-shadow" data-touchpoing="home">
-          <img class="" src="{{resizeImage _thumbnail.url 'thumbnail'}}" alt="">
-        </a>
-        <a href="{{_url}}" data-touchpoing="home">{{displayname}}</a>
+        <div>
+          <a href="{{_url}}" class="kdlpc-image hvr-float-shadow" data-touchpoing="home">
+            <img class="" src="{{resizeImage _thumbnail.url 'thumbnail'}}" alt="">
+          </a>
+          <a href="{{_url}}" data-touchpoing="home">{{displayname}}</a>
+        </div>
       </li>
     {{/each}}
   </ul>
