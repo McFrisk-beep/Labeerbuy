@@ -1,0 +1,176 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+/* The actual timeline (the vertical ruler) */
+.kdl-timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.kdl-timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: beige;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.kdl-timeline-container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.kdl-timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.kdl-timeline-left {
+  left: -25%;
+}
+
+/* Place the container to the right */
+.kdl-timeline-right {
+  left: 25%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.kdl-timeline-left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.kdl-timeline-right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.kdl-timeline-right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.kdl-timeline-content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .kdl-timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .kdl-timeline-container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .kdl-timeline-container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .kdl-timeline-left::after, .kdl-timeline-right::after {
+  left: 15px;
+  }
+
+  .kdl-timeline-left{
+    left: 0%;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .kdl-timeline-right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="kdl-timeline">
+  <div class="kdl-timeline-container kdl-timeline-left">
+    <div class="kdl-timeline-content">
+      <h2>2017</h2>
+      <p>Our third store has opened in San Francisco, along with a new signature brew for our 10th anniversary since launch!</p>
+    </div>
+  </div>
+  <div class="kdl-timeline-container kdl-timeline-right">
+    <div class="kdl-timeline-content">
+      <h2>2016</h2>
+      <p>The launch of the collaboration brew with other indie breweries, giving us more options to offer local brews in our pub. All pubs now also have fireside gatherings for those Cool Saturday nights!</p>
+    </div>
+  </div>
+  <div class="kdl-timeline-container kdl-timeline-left">
+    <div class="kdl-timeline-content">
+      <h2>2015</h2>
+      <p>We've finally opened our second store in Santa Monica in Los Angeles California!</p>
+    </div>
+  </div>
+  <div class="kdl-timeline-container kdl-timeline-right">
+    <div class="kdl-timeline-content">
+      <h2>2012</h2>
+      <p>The release of four new beer brews, as well as expansion to Bourbon and Whisky!</p>
+    </div>
+  </div>
+  <div class="kdl-timeline-container kdl-timeline-left">
+    <div class="kdl-timeline-content">
+      <h2>2011</h2>
+      <p>Word grew and our LaBeerBuy signature became a hit! We've started working on new formulas while retaining our original taste.</p>
+    </div>
+  </div>
+  <div class="kdl-timeline-container kdl-timeline-right">
+    <div class="kdl-timeline-content">
+      <h2>2007</h2>
+      <p>The first time we've opened up our brewery with our first signature LaBeerBuy brew.</p>
+    </div>
+  </div>
+</div>
+
+</body>

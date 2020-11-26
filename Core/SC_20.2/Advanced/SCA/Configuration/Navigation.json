@@ -63,6 +63,16 @@
                         "type": "string",
                         "title": "Placeholder",
                         "description": "Placeholder===Cateogries will be used to render the category menu at that place. "
+                    },
+                    "iscategory": {
+                        "type": "boolean",
+                        "title": "Category",
+                        "description": "If data entry is a category"
+                    },
+                    "featuredimage": {
+                        "type": "string",
+                        "title": "Featured Image",
+                        "description": "Parent category featured image"
                     }
                 }
             },

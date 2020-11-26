@@ -36,6 +36,10 @@
 			.hp_banner_text  {
 				padding: 0 100px;
 
+				.kd-cct-fb-paragraph {
+					margin-bottom: 20px;
+				}
+
 				@media screen and (max-width: $screen-sm-max) {
 					padding: 0 15px;
 				}

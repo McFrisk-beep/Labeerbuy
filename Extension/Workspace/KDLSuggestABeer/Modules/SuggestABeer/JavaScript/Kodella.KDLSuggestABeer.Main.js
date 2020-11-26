@@ -30,8 +30,10 @@ define(
 				// layout.addChildView('Header.Logo', function() {
 				// 	return new MainView({ container: container });
 				// });
-				
-				return new SuggestABeerRouter(container);
+				var enableFeature = Configuration.get('kdlsuggestabeer.enable');
+				if(enableFeature){
+					return new SuggestABeerRouter(container);
+				}
 			}
 
 		}

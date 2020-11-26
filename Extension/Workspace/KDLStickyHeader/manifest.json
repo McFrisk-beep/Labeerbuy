@@ -2,14 +2,15 @@
     "name": "KDLStickyHeader",
     "fantasyName": "KDLStickyHeader",
     "vendor": "KDL",
+    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=20.2.0",
         "SCS": ">=20.2.0"
     },
-    "version": "1.0.0",
     "description": "KDLStickyHeader",
+    "skins": [],
     "assets": {
         "img": {
             "files": [
@@ -29,6 +30,19 @@
     "configuration": {
         "files": [
             "Modules/KDLStickyHeader/Configuration/KDLStickyHeader.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss",
+            "myaccount": "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss",
+            "checkout": "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss"
+        },
+        "files": [
+            "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss",
+            "Modules/KDLStickyHeader/Sass/_kdl-colorgrouping.scss",
+            "Modules/KDLStickyHeader/Sass/_kdl-header.scss",
+            "Modules/KDLStickyHeader/Sass/_kdl-stickyheader.scss"
         ]
     },
     "templates": {
@@ -58,19 +72,6 @@
                 ]
             }
         }
-    },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss",
-            "myaccount": "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss",
-            "checkout": "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss"
-        },
-        "files": [
-            "Modules/KDLStickyHeader/Sass/_kdlstickyheader-kdlstickyheader.scss",
-            "Modules/KDLStickyHeader/Sass/_kdl-colorgrouping.scss",
-            "Modules/KDLStickyHeader/Sass/_kdl-header.scss",
-            "Modules/KDLStickyHeader/Sass/_kdl-stickyheader.scss"
-        ]
     },
     "javascript": {
         "entry_points": {
@@ -121,6 +122,7 @@
             "Modules/KDLStickyHeader/SuiteScript/KDLStickyHeader.ServiceController.js"
         ]
     },
+    "local_folder": "Workspace\\KDLStickyHeader",
     "suitescript2": {
         "files": [
             "Modules/KDLStickyHeader/SuiteScript2/KDLStickyHeader.Service.ss"

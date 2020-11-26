@@ -52,7 +52,7 @@ define('KDLHeader.View', [
 
                 jQuery(".header-logo-image").css("width", "135px");
                 jQuery(".header-logo-nav-container").css("height", "100px");
-                jQuery(".header-menu-level-container").css("top", "98px");
+                jQuery(".header-menu-level-container").css("top", "122px");
             }
         }
     });

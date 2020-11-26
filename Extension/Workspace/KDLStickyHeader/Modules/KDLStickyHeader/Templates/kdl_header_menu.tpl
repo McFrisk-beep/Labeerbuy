@@ -2,9 +2,9 @@
 
 <script type="text/javascript">
 $(document).ready( function(){
-	$(".header-menu-level-container").css("position", "fixed");
-	$(".header-menu-level-container").css("top", $(".shopping-layout-header").height());
-	$(".header-menu-level-container").css("left", "0");
+	//$(".header-menu-level-container").css("position", "fixed");
+	//$(".header-menu-level-container").css("top", $(".shopping-layout-header").height());
+	//$(".header-menu-level-container").css("left", "0");
 });
 </script>
 <nav class="header-menu-secondary-nav">
@@ -13,6 +13,8 @@ $(document).ready( function(){
 
 		{{#each categories}}
 			{{#if text}}
+
+				{{#unless parentId}}
 				<li {{#if categories}}data-toggle="categories-menu"{{/if}}>
 					<a class="{{class}}" {{objectToAtrributes this}}>{{translate text}}</a>
 					{{#if categories}}
@@ -20,9 +22,9 @@ $(document).ready( function(){
 						<li style="
 						display: flex;
     					justify-content: center;">
-							<ul class="header-menu-level2" style="margin-right: 15px;">
-								<li style="padding: 7px 20px;">SHOP BY CATEGORY</li>
-								<li style="padding: 7px 20px;"><hr style="width: 100%; height: 5px;"></li>
+							<ul class="header-menu-level2">
+								<li class="kdl-menu-header">SHOP BY CATEGORY</li>
+								<li class="kdl-menu-header"><hr></li>
 								{{#each categories}}
 								<li {{#if categories}}class="categories-menu-arrow"{{/if}}>
 									<!-- <img src="{{resizeImage getThemeAssetsPath 'img/default.jpg'}}" /> -->
@@ -44,31 +46,23 @@ $(document).ready( function(){
 								</li>
 								{{/each}}
 							</ul>
-							<ul class="header-menu-level2" style="margin-right: 15px;">
-								<li style="padding: 7px 20px;">SHOP BY BRAND</li>
-								<li style="padding: 7px 20px;"><hr style="width: 100%; height: 5px;"></li>
+							<ul class="header-menu-level2">
+								<li class="kdl-menu-header">SHOP BY BRAND</li>
+								<li class="kdl-menu-header"><hr></li>
+								{{#each brand}}
 								<li>
-									<a href="#"class="header-menu-level2-anchor">
-										<div>Coors</div>
+									<a href="{{href}}"class="header-menu-level2-anchor">
+										<div>{{translate text}}</div>
 									</a>
 								</li>
-								<li>
-									<a href="#"class="header-menu-level2-anchor">
-										<div>Engkanto</div>
-									</a>
-								</li>
-								<li>
-									<a href="#"class="header-menu-level2-anchor">
-										<div>Tiger</div>
-									</a>
-								</li>
+								{{/each}}
 							</ul>
-							<ul class="header-menu-level2" style="margin-right: 15px;">
-								<li style="padding: 7px 20px;">FEATURED PRODUCT</li>
-								<li style="padding: 7px 20px;"><hr style="width: 100%; height: 5px;"></li>
+							<ul class="header-menu-level2">
+								<li class="kdl-menu-header">FEATURED PRODUCT</li>
+								<li class="kdl-menu-header"><hr></li>
 								<li>
-									<a href="#"class="header-menu-level2-anchor">
-										<img src="{{getThemeAssetsPath 'img/default.jpg'}}?resizeid=12&resizeh=150&resizew=225" />
+									<a href="{{item}}"class="header-menu-level2-anchor">
+										<img src="{{resizeImage featuredimage 'tinythumb'}}" />
 									</a>
 								</li>
 							</ul>
@@ -76,6 +70,8 @@ $(document).ready( function(){
 					</ul>
 					{{/if}}
 				</li>
+				{{/unless}}
+
 			{{/if}}
 		{{/each}}
 	</ul>
