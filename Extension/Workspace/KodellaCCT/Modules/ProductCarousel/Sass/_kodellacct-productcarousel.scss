@@ -41,15 +41,23 @@
 
 			a {
 				margin-bottom: 15px;
-				float: left;
-				width: 100%;
+				display: inline-block;
 				clear: both;
 
-				img {
-					height: 100%;
-					width: auto;
-					max-height: 225px;
+				// img {
+				// 	height: 100%;
+				// 	width: auto;
+				// 	max-height: 225px;
+				// }
+
+				&.kdlpc-text {
+					// min-height: 44px;
 				}
+			}
+
+			.kdl-price {
+				font-size: 16px;
+				font-weight: bold;
 			}
 		}
 	}
@@ -75,9 +83,6 @@
 
 	.kdl-prev-icon {
 		left: 0;
-		@media screen and (min-width: $screen-md-min){
-			left: -30px;	
-		}
 
 		&::before,
 		&::after {
@@ -102,9 +107,6 @@
 
 	.kdl-next-icon {
 		right: 0;
-		@media screen and (min-width: $screen-md-min){
-			right: -30px;	
-		}
 
 		&::before,
 		&::after {

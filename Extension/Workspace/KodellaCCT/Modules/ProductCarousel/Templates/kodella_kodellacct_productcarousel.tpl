@@ -8,7 +8,12 @@
           <a href="{{_url}}" class="kdlpc-image hvr-float-shadow" data-touchpoing="home">
             <img class="" src="{{resizeImage _thumbnail.url 'thumbnail'}}" alt="">
           </a>
-          <a href="{{_url}}" data-touchpoing="home">{{displayname}}</a>
+          <a href="{{_url}}" class="kdlpc-text" data-touchpoing="home">{{displayname}}</a>
+          {{#if ../showprice}}
+            <p class="kdl-price">{{onlinecustomerprice_formatted}}</p>
+          {{else}}
+            <p>{{translate 'Logged in to see price'}}</p>
+          {{/if}}
         </div>
       </li>
     {{/each}}
