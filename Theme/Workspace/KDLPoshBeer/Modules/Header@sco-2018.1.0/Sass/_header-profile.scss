@@ -120,6 +120,7 @@
                     left: auto;
                     top: auto;
                     transition: none;
+                    color: #FAFAFA;
                     @include box-shadow(none);
 
                     > li {
@@ -127,7 +128,7 @@
                             min-width: auto;
 
                             &:hover {
-                                background-color: transparent;
+                                background-color: #DE6E4B;
                             }
                         }
                     }

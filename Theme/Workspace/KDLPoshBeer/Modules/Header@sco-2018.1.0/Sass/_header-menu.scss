@@ -162,11 +162,12 @@
     display: block;
     text-transform: $sc-main-navigation-submenu-link-text-transform;
     padding: $sc-main-navigation-submenu-link-vertical-padding $sc-main-navigation-submenu-link-horizontal-padding 0;
-    color: $sc-main-navigation-submenu-link-color;
+    color: #FAFAFA;
     text-align: $sc-main-navigation-submenu-link-align;
 
     &:hover {
-        color: $sc-main-navigation-submenu-link-hover-color;
+        color: #FAFAFA;
+        background-color: #DE6E4B;
     }
 
     &:active, &.active {
