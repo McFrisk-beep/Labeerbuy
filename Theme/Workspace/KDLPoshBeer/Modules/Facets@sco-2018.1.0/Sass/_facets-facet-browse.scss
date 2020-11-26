@@ -178,6 +178,9 @@
 	padding: 0;
 	//background-color: $sc-neutral-shade-0;
 	overflow-x:hidden;
+    position: sticky;
+    top: 60px;
+    z-index: 0;
 
 	@media (min-width: $screen-md-min) {
 		@include box-shadow(none);
