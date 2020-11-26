@@ -16,3 +16,27 @@
     color: $sc-color-secondary;
     font-weight: bold;
 }
+
+.kdl-productslider-content {
+	text-align: center;
+	margin-bottom: 20px;
+
+	.kdlpc-slider {
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			list-style: none;
+			width: 25%;
+			padding: 0 15px;
+
+			@media screen and (max-width: $screen-sm-max) {
+				width: 50%;
+			}
+
+			a {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}

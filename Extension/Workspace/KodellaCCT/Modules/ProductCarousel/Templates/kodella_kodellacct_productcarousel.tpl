@@ -1,11 +1,18 @@
-<!-- <section class="productcarousel-info-card">
-    <span class="productcarousel-info-card-content">
-      {{message}}
-    </span>
-</section> -->
-
-<p>HELLO WORLD. THIS IS THE PRODUCT CAROUSEL.</p>
-
+<section class="kdl-productslider-content">
+  <h1>{{header}}</h1>
+  <p>{{subheader}}</p>
+  <ul  class="kdlpc-slider">
+    {{#each items}}
+      <li>
+        <a href="{{_url}}" class="kdlpc-image hvr-float-shadow" data-touchpoing="home">
+          <img class="" src="{{resizeImage _thumbnail.url 'thumbnail'}}" alt="">
+        </a>
+        <a href="{{_url}}" data-touchpoing="home">{{displayname}}</a>
+      </li>
+    {{/each}}
+  </ul>
+  <a href="{{linkurl}}" class="button-primary button-large">{{linklabel}}</a>
+</section>
 
 <!--
   Available helpers:
