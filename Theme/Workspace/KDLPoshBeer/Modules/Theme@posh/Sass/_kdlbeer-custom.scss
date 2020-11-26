@@ -50,3 +50,8 @@
         margin-bottom: 15px;
     }
 }
+.item-relations-related-item-thumbnail {
+    @extend .hvr-float-shadow;
+    overflow: visible;
+    margin-bottom: 15px;
+}
