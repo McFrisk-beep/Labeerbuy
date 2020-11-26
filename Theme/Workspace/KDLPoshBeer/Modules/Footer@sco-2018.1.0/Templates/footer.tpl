@@ -3,7 +3,7 @@
 <div data-view="Global.BackToTop"></div>
 <div id="banner-footer" class="content-banner banner-footer" data-cms-area="global_banner_footer" data-cms-area-filters="global"></div>
 <section  class="kdl-newsletter-wrapper">
-	<div class="kdl-newsletter">
+	<div class="kdl-newsletter col-sm-4 col-sm-offset-6">
 	{{#if extraFooterView.showLegacyNewsletter}}
 		<div data-view="FooterContent"></div>
 	{{else}}

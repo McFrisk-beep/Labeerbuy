@@ -13,7 +13,7 @@
 
 {{#if hasFacetsOrAppliedFacets}}
     <div class="facets-faceted-navigation-title-container">
-        <h3 class="facets-faceted-navigation-title">{{translate 'Filter'}}</h3>
+        <!-- <h3 class="facets-faceted-navigation-title">{{translate 'Filter'}}</h3> -->
 
         <h4 class="facets-faceted-navigation-results">
             {{#if keywords}}

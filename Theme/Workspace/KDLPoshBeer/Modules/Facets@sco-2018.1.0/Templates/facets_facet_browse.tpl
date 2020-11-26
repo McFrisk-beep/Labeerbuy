@@ -8,7 +8,7 @@
 				<div class="facets-facet-browse-category">
 						<div data-view="Facets.Browse.CategoryHeading" class="facets-facet-browse-category-heading-container"></div>
 
-						<div data-view="Facets.CategoryCells"  class="facets-facet-browse-category-cells-container"></div>
+						<!-- <div data-view="Facets.CategoryCells"  class="facets-facet-browse-category-cells-container"></div> -->
 				</div>
 		{{/if}}
 

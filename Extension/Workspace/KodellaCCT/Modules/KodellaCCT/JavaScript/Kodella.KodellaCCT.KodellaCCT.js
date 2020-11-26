@@ -6,12 +6,14 @@ define(
 	,	'Kodella.KodellaCCT.Quote'
 	,	'Kodella.KodellaCCT.FullBanner'
 	,	'Kodella.KodellaCCT.HalfBanner'
+	,	'Kodella.KodellaCCT.ProductCarousel'
 	]
 ,   function (
 		KodellaCCTView
 	,	KodellaCCTQuote
 	,	KodellaCCTFullBanner
 	,	KodellaCCTHalfBanner
+	,	KodellaCCTProductCarousel
 	)
 {
 	'use strict';
@@ -29,6 +31,7 @@ define(
 			KodellaCCTQuote.mountToApp(container);
 			KodellaCCTFullBanner.mountToApp(container);
 			KodellaCCTHalfBanner.mountToApp(container);
+			KodellaCCTProductCarousel.mountToApp(container);
 			
 			if(layout)
 			{

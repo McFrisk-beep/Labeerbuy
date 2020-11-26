@@ -54,3 +54,29 @@
         display: none;
     }
 }
+
+//HEADER
+
+.kdl-facets-header {
+    height: 14em;
+    padding: 2em 2em 2.5em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    background-color: #4d4d4c;
+    background-blend-mode: overlay;
+   
+
+
+    h1,p{
+         color:white;
+    }
+
+    @media(min-width: 1200px){
+         height: 18.5em;
+    }
+}
