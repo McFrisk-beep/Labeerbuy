@@ -6,8 +6,8 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 		'CustomContentType.Base.View'
 	,	'Kodella.KodellaCCT.ProductCarousel.Collection'
 	,	'kodella_kodellacct_productcarousel.tpl'
-	,	'LiveOrder.Model'
 	,	'SC.Configuration'
+
 	,	'jQuery'
 	,	'underscore'
 	]
@@ -15,8 +15,8 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 		CustomContentTypeBaseView
 	,	KDCCTCollection
 	,	kodella_kodellacct_productcarousel_tpl
-	,	LiveOrderModel
 	,	Configuration
+
 	,	jQuery
 	,	_
 	)
@@ -27,56 +27,68 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 
 		template: kodella_kodellacct_productcarousel_tpl
 
-	,	events: {
-			'click [data-action="select"]': 'toggleAddToBag2'
-		,	'click [data-action="add-to-cart"]': 'addToCart'
-		}
-	,	toggleAddToBag2: function toggleAddToBag2(e) {
-			jQuery("[data-action='select']").each(function(){
-				jQuery(this).removeClass("active");
-			});
-			
-			jQuery(e.target).addClass("active");
-			jQuery(e.target).parent().parent().find("#global-product-add-to-bag").css("display", "block");
-		}
-	,	addToCart: function addToCart(e) {
-			var self = this
-			, cart = LiveOrderModel.getInstance()
-			, item_id = null;
-			
+		// As an example of the 'install' method, we are going to emulate a fetch to a service
+		// Until the promise is resolved, you won't be able to edit the settings of this CCT
+		// The same could happen with the 'update' method
+	,	install: function (settings, context_data)
+		{
+			this._install(settings, context_data);
 
-			item_id = jQuery(e.target).attr("data-value");
+			var self = this;
+			self.getProductList(self.settings.custrecord_productcategory);
+			this.on('afterViewRender', this.initSliderCustom, this);
+			// call some ajax here
+			return jQuery.Deferred().resolve();
+		}
+	,	initSliderCustom: function initSliderCustom () {
+			var self = this;
 
-			var line = {
-					freeGift: false
-				,	fulfillmentChoice: "ship"
-				,	item: {
-						internalid: item_id
+			var viewWidth = jQuery(window).width();
+			var containerWidth = jQuery('.kdl-productslider-content').width();
+			var carouselConfig = {
+				nextText: '<a class="kdl-next-icon"><i></i></a>',
+				prevText: '<a class="kdl-prev-icon"><i></i></a>',
+				auto: false,
+				minSlides: 1,
+				maxSlides: 4,
+				moveSlides: 1,
+				pager: false,
+				slideWidth: Math.floor((containerWidth - 20) / 4),
+				preloadImages: 'all',
+				wrapperClass:'bx-wrapper',
+				easing:'ease',
+				adaptiveHeight: true,
+				
+				// infiniteLoop: false,
+				// hideControlOnEnd: true
+			}
+			
+			if (SC.ENVIRONMENT.jsEnvironment === 'browser') {
+				window.setTimeout(function timeout() {
+					if(viewWidth <= 767) {
+						carouselConfig.maxSlides = 2;
+						carouselConfig.slideWidth = Math.floor((containerWidth) / 2);
+						_.initBxSlider(self.$('.kdlpc-slider'), carouselConfig);
 					}
-				,	internalid: item_id
-				,	quantity: 1
-				};
-
-			var cart_promise = cart.addLine(line);
-			
-			jQuery(e.target).text("ADDING...");
-
-			cart_promise.done(function (){
-
-				jQuery("[data-view='Header.MiniCart']").addClass("open");
-				jQuery(e.target).text("ADDED TO BAG");
-				jQuery(e.target).bind("click", function(){
-					return false;
-				});
-			});
+					if(viewWidth >= 768 && viewWidth <= 1199) {
+						carouselConfig.maxSlides = 3;
+						carouselConfig.slideWidth = Math.floor((containerWidth) / 3);
+						_.initBxSlider(self.$('.kdlpc-slider'), carouselConfig);
+					} else if (viewWidth >= 1200) {
+						carouselConfig.maxSlides = 4;
+						carouselConfig.slideWidth = Math.floor((containerWidth) / 4);
+						_.initBxSlider(self.$('.kdlpc-slider'), carouselConfig);
+					}
+				},0);
+			}
 		}
 	,	getProductList: function(selectedCategory){
 			var self = this;
 			var cctProdCollection = new KDCCTCollection();
 			
 			var fetchdata = {
-				commercecategoryurl : selectedCategory,
-				limit: 3,
+				commercecategoryid : parseInt(selectedCategory),
+				limit: 8,
 				offset: 0,
 				sort: 'commercecategory:asc'
 			};
@@ -85,46 +97,11 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 					data: fetchdata
 				}
 			).done(function (){
-				// console.log('cctProdCollection', cctProdCollection);
+				// console.log('rota cctProdCollection', cctProdCollection);
 				self.cctProdCollection = cctProdCollection;
 				self.render();
 			});
 		}
-	,	install: function (settings, context_data)
-		{
-			this._install(settings, context_data);
-
-			var self = this;
-			var selectedCategory = self.settings.custrecord_productcategory;
-			// selectedCategory = selectedCategory.replace(/\+/g, '').toLowerCase();
-			// var selectedCategory = "Irving Place Studio";
-			var cat = SC.CATEGORIES;
-
-			// call some ajax here
-			var tisCategory = self.getCategory(cat, selectedCategory);
-			self.getProductList(tisCategory.fullurl);
-			
-			return jQuery.Deferred().resolve();
-		}
-	,	getCategory: function(categoryList, name) {
-			var self = this;
-			var selectedCategory;
-			for(var i=0; i<categoryList.length; i++){
-				if(categoryList[i].name == name){
-					selectedCategory = categoryList[i];
-					break;
-				}else{
-					if(categoryList[i].categories && categoryList[i].categories.length > 0 ){
-						selectedCategory = self.getCategory(categoryList[i].categories, name);
-						if(selectedCategory){
-							break;
-						}
-					}
-				}
-			}
-			return selectedCategory;
-		}
-
 		// The list of contexts that you may need to run the CCT
 	,	contextDataRequest: ['item']
 
@@ -138,9 +115,7 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 	,	getContext: function getContext()
 		{
 			var message = 'Hello World I\'m a CCT!!';
-			//var cctExtensions = Configuration.get('kdlcctextension.kdlcctproducts', []);
 			var items = this.cctProdCollection;
-			// console.log('ROTA this', this.settings);
 
 			//example of how to access context data from the item
 			if (this.contextData.item)
@@ -149,34 +124,15 @@ define('Kodella.KodellaCCT.ProductCarousel.View'
 				message = 'Special Offer!! ' + item.keyMapping_name + ' at $' + item.keyMapping_price + '.';
 			}
 
-			if(items){
-				items = this.cctProdCollection;
-
-				var new_collection = _.each(items.models,function(item){
-					return item;
-
-				});
-
-				// for(var i in new_collection){
-				// 	var tisItem = new_collection[i];
-				// 	var tismatrixchilditems = tisItem.get('_matrixChilds').models;
-				// 	if(tismatrixchilditems && tismatrixchilditems.length > 0){
-				// 			if(Number(tismatrixchilditems[0].get('custitem_psgss_product_size'))){
-				// 				var arrSorted = _.sortBy(tismatrixchilditems, function(tisChild){ return tisChild.get('custitem_psgss_product_size'); });
-				// 				tismatrixchilditems = arrSorted;
-				// 			}
-				// 			tisItem.get('_matrixChilds').models = tismatrixchilditems;
-				// 	}
-				// }
-			}
-			
+			// if you would want to get the settings from the SMT Panel you would consult
+			// var field_value = this.settings.custrecord_<id of the custom field in the cct record>
 			return {
 				message: message
-			,	items: new_collection?new_collection:[]
 			,	header: this.settings.custrecord_productheader
 			,	subheader: this.settings.custrecord_productsubheader
-			,	linklabel: this.settings.custrecord_productlink
-			,	linkurl: this.settings.custrecord_productlinklabel
+			,	linklabel: this.settings.custrecord_productlinklabel
+			,	linkurl: this.settings.custrecord_productlink
+			,	items: items
 			};
 		}
 	});
