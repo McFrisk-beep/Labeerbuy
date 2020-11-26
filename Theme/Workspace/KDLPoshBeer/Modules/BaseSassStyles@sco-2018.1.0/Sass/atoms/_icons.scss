@@ -1,6 +1,7 @@
 $sc-color-icon: $sc-neutral-shade-0;
 
-$sc-color-star-filled: $sc-color-secondary;
+// $sc-color-star-filled: $sc-color-secondary;
+$sc-color-star-filled: #ffc800;
 $sc-color-star-empty: lightgrey;
 $sc-color-star-error: $sc-color-error;
 
@@ -209,7 +210,8 @@ $sc-color-star-error: $sc-color-error;
 .icon-ok-sign {
 	@extend .fa;
 	@extend %fa-check-circle;
-	color: $sc-color-theme-500;
+	// color: $sc-color-theme-500;
+	color: #68c037;
 }
 
 .icon-locked {
