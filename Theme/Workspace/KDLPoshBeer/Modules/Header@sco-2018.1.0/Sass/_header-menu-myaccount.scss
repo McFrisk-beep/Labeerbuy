@@ -21,10 +21,10 @@
 }
 
 %default-link {
-	color: $sc-color-link;
+	color: #FAFAFA;
 	&:hover, &:focus {
-		color: $sc-color-link-hover;
-		text-decoration: none;
+		color: #FAFAFA;
+    	background-color: #DE6E4B;
 	}
 
 	&:active {
@@ -41,10 +41,11 @@
 
 	.header-menu-myaccount-overview-anchor {
 		@extend %default-link;
+		padding: $sc-padding-lv3;
 		@media (min-width: $screen-md-min) {
 			font-size: $sc-font-size-m;
 			float: left;
-			padding: $sc-padding-lv3 0;
+			padding: $sc-padding-lv3;
 		}
 	}
 
@@ -84,7 +85,7 @@
 		@extend %default-link;
 		float: right;
 		display:block;
-		padding: $sc-padding-lv3 0;
+		padding: $sc-padding-lv3;
 		&:hover .header-menu-myaccount-signout-icon {
 			color: $sc-color-link-hover;
 		}
@@ -113,6 +114,7 @@
 			&.header-menu-myaccount-span-level2 {
 				font-weight: $sc-font-weight-semibold;
 				padding-left: $sc-padding-lv1;
+				color: #FAFAFA;
 			}
 		}
 		a[name="Overview"] {

@@ -19,7 +19,9 @@
     padding-right: $sc-content-padding;
 }
 
-.shopping-layout-breadcrumb {}
+.shopping-layout-breadcrumb {
+	padding: 10px;
+}
 
 .shopping-layout-no-javascript-msg {
 	@extend .message-warning;
