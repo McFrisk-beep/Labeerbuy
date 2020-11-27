@@ -15,6 +15,8 @@
 .global-views-breadcrumb {
 	@extend .breadcrumb;	
 	font-size:14px;
+	padding-left: 10px;
+    padding-top: 10px;
 }
 
 .global-views-breadcrumb-divider-icon {

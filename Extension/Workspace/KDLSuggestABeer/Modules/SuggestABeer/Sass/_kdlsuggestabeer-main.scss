@@ -5,7 +5,11 @@
 	Example:
 	@import "other-sass-file.scss";
 	@import "../../<other module>/Sass/other-sass-file.scss";
-*/ 
+*/
+
+.shopping-layout-breadcrumb {
+	padding: 0;
+}
 
 .main-info-card {
     @extend .info-card;
@@ -15,4 +19,114 @@
     @extend .info-card-content;
     color: $sc-color-secondary;
     font-weight: bold;
+}
+
+.sab-container {
+	max-width: 1600px;
+    margin: 0 auto;
+}
+
+.sab-questions  {
+	text-align: center;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background: #ffc800;
+	box-shadow: inset 0 -1px 10px 0 rgba(0, 0, 0, 0.5);
+	// background: url(getExtensionAssetsPath('img/kdl-drinkbg.svg')) center left no-repeat;
+	// background-size: contain;
+	// min-height: 425px;
+
+	@media screen and (max-width: $screen-sm-max) {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.sabq-content  {
+		padding: 20px;
+		position: relative;
+
+		&::before {
+			background:  #fafafa;
+			opacity: .9;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		& > div {
+			position: relative;
+		}
+
+		& > p {
+			margin-bottom: 20px;
+		}
+		
+
+		.sab-fields-container {
+			padding: 20px  0;
+		}
+		input {
+			text-align: center;
+		}
+
+		h1 {
+			span {
+				color: $sc-color-primary;
+			}
+		}
+	}
+}
+
+.sab-items {
+	h1 {
+		display: none;
+		text-align: center;
+	}
+	.sab-rlist {
+		clear: both;
+		display: flex;
+		justify-content: center;
+		flex: 0 1 50%;
+		@media screen and (min-width:  $screen-sm-min) {
+			flex: 0 1 32%;
+		}
+
+		& > div {
+			padding: 0 15px;
+
+			a {
+				margin-bottom: 15px;
+			}
+
+			.sab-name {
+				font-size: 15px;
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	.kdl-price {
+		font-size: 16px;
+		font-weight: bold;
+	}
+}
+
+.sab-showresults {
+	.sab-questions {
+		height: auto;
+	}
+	.sab-items {
+		padding: 40px 0;
+		margin-bottom: 40px;
+		h1 {
+			display: block;
+		}
+	}
 }

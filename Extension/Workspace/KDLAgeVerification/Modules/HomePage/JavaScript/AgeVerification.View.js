@@ -31,8 +31,12 @@ define('AgeVerification.View'
 			/*  Uncomment to test backend communication with an example service
 				(you'll need to deploy and activate the extension first)
 			*/
+			if(self.getCookie('ageverification')){
+				jQuery("body").css("overflow", "unset");
+			} else {
+				jQuery("body").css("overflow", "hidden");
+			}
 
-			jQuery("body").css("overflow", "hidden");
 		}
 
 	,	events: {
