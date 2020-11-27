@@ -12,7 +12,7 @@
 
 	{{#if showMyAccountMenu}}
 		<ul class="header-profile-menu-myaccount-container">
-			<li data-view="Header.Menu.MyAccount" style="margin: 0 auto; max-width: 1600px;></li>
+			<li data-view="Header.Menu.MyAccount" style="margin: 0 auto; max-width: 1600px;"></li>
 		</ul>
 	{{/if}}
 
