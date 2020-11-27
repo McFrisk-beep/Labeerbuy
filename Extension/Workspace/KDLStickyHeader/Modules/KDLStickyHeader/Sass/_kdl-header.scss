@@ -45,6 +45,10 @@ button {
     //border: solid 1px red;
     height: 100px;
     transition: 0.2s;
+
+    @media(max-width: $screen-md-min) {
+        height: unset;
+    }
 }
 
 @media screen and (min-width: $screen-md-min)  {

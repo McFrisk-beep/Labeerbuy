@@ -46,7 +46,11 @@ define('KDLHeader.View', [
                 var topPosition = $('.header-logo-nav-container').position();
 
                 jQuery(".header-logo-image").css("width", "85px");
-                jQuery(".header-logo-nav-container").css("height", "60px");
+
+                if(window.screen.availWidth >= 992){
+                    jQuery(".header-logo-nav-container").css("height", "60px");
+                }
+
                 jQuery(".header-menu-level-container").css("top", (topPosition.top + 58) + "px");
                 jQuery(".header-profile-menu-myaccount-container").css("top", (topPosition.top + 58) + "px");
                 console.log('top', jQuery(".header-profile-menu-myaccount-container").css("top"));
@@ -57,7 +61,11 @@ define('KDLHeader.View', [
                 var topOffset = $('.header-logo-nav-container').offset().top;
 
                 jQuery(".header-logo-image").css("width", "135px");
-                jQuery(".header-logo-nav-container").css("height", "100px");
+
+                if(window.screen.availWidth >= 992){
+                    jQuery(".header-logo-nav-container").css("height", "100px");
+                }
+
                 jQuery(".header-menu-level-container").css("top", (topOffset + 100) + "px");
                 jQuery(".header-profile-menu-myaccount-container").css("top", (topOffset + 100) + "px");
                 console.log('top', jQuery(".header-profile-menu-myaccount-container").css("top"));
