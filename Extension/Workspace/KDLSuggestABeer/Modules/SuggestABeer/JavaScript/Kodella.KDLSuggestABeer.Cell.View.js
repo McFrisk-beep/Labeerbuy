@@ -3,12 +3,14 @@ define(
 ,	[
 		'Backbone.CompositeView'
 	,	'kodella_kdlsuggestabeer_cell.tpl'
+	,	'Profile.Model'
 
 	,	'Backbone'
 	]
 ,	function (
 		BackboneCompositeView
 	,	kodella_kdlsuggestabeer_cell_tpl
+	,	ProfileModel
 
 	,	Backbone
 	)
@@ -20,27 +22,27 @@ define(
 		//@property {Function} template
 		template: kodella_kdlsuggestabeer_cell_tpl
 
-	,	initialize: function ()
-		{
-			// Backbone.View.prototype.initialize.apply(this, arguments);
-			// BackboneCompositeView.add(this);
+	,	initialize: function () {
+			if (SC.ENVIRONMENT.jsEnvironment === 'browser') {
+				window.setTimeout(function timeout() {
+					$('.sab-container').addClass('sab-showresults');
+					$('html, body').animate({
+						scrollTop: $('.sab-items').offset().top
+					}, 800);
+				},0);
+			}
 		}
-
-	// ,	contextData: {
-	// 		'item': function ()
-	// 		{
-	// 			return this.model;
-	// 		}
-	// 	}
 	,	getContext: function ()
 		{
 			var self = this;
 			var model = self.model;
 
 			return {
-				name: model.get('name'),
-				thumb: model.get('thumb') ? model.get('thumb').name : '',
-				url: model.get('url')
+				name: model.get('displayname'),
+				thumb: model.get('itemimages_detail') ? model.get('itemimages_detail').urls[0].url : model.get('itemimages_detail').urls[0].altimagetext,
+				url: model.get('_url'),
+				showprice: !ProfileModel.getInstance().hidePrices(),
+				price:  model.get('onlinecustomerprice_formatted')
 			};
 
 		}
