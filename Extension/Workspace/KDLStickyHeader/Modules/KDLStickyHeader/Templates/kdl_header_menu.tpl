@@ -24,15 +24,16 @@ $(document).ready( function(){
     					justify-content: center;">
 							<ul class="header-menu-level2">
 								<li class="kdl-menu-header">SHOP BY CATEGORY</li>
-								<li class="kdl-menu-header"><hr></li>
+								<li class="kdl-menu-header">
+									<img src="{{resizeImage categoryimage 'navigation'}}" /> 
+								</li>
 								{{#each categories}}
-								<li {{#if categories}}class="categories-menu-arrow"{{/if}}>
-									<!-- <img src="{{resizeImage getThemeAssetsPath 'img/default.jpg'}}" /> -->
-									<!-- <img src="{{getThemeAssetsPath 'img/default.jpg'}}?resizeid=12&resizeh=150&resizew=225" /> -->
-									<a class="{{class}}" {{objectToAtrributes this}}>
+								<!-- <li {{#if categories}}class="categories-menu-arrow"{{/if}}> -->
+								<li class="kdl-menu-list">
+									<!-- <a class="{{class}}" {{objectToAtrributes this}}> -->
+									<a {{objectToAtrributes this}}>
 										<div>{{translate text}}</div>
-										<!-- <hr>
-										<i class="header-menu-level-2-text">"Proin risus dui, lobortis ut nunc eu, euismod tempus purus."</i> -->
+										<!-- <i class="header-menu-level-2-text">"Proin risus dui, lobortis ut nunc eu, euismod tempus purus."</i> -->
 									</a>
 										{{#if categories}}
 											<ul class="header-menu-level3">
@@ -48,22 +49,41 @@ $(document).ready( function(){
 							</ul>
 							<ul class="header-menu-level2">
 								<li class="kdl-menu-header">SHOP BY BRAND</li>
-								<li class="kdl-menu-header"><hr></li>
+								<li class="kdl-menu-header">
+									<img src="{{resizeImage brandimage 'navigation'}}" /> 
+								</li>
 								{{#each brand}}
-								<li>
-									<a href="{{href}}"class="header-menu-level2-anchor">
+								<li class="kdl-menu-list">
+									<a href="{{href}}">
 										<div>{{translate text}}</div>
 									</a>
 								</li>
 								{{/each}}
 							</ul>
 							<ul class="header-menu-level2">
-								<li class="kdl-menu-header">FEATURED PRODUCT</li>
-								<li class="kdl-menu-header"><hr></li>
-								<li>
-									<a href="{{item}}"class="header-menu-level2-anchor">
-										<img src="{{resizeImage featuredimage 'tinythumb'}}" />
+								<li class="kdl-menu-header">BESTSELLERS</li>
+								<li class="kdl-menu-header">
+									<img src="{{resizeImage bestsellerimage 'navigation'}}" /> 
+								</li>
+								{{#each bestseller}}
+								<li class="kdl-menu-list">
+									<a href="{{href}}">
+										<div>{{translate text}}</div>
 									</a>
+								</li>
+								{{/each}}
+							</ul>
+							<ul class="header-menu-level2"
+								style="
+								display: flex;
+							    background: url('{{resizeImage shopimage 'navigation_side'}}');
+							    width: 400px;">
+								<li class="kdl-menu-header">
+									<div style="
+									    position: absolute;
+									">
+										<a class="button-primary button-large" {{objectToAtrributes this}}>SHOP NOW</a>
+									</div>
 								</li>
 							</ul>
 						</li>

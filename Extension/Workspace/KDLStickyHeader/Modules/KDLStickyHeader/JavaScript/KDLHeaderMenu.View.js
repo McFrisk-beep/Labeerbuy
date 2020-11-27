@@ -3,6 +3,7 @@ define('KDLHeaderMenu.View', [
 
     'kdl_header_menu.tpl',
 
+    'Categories.Utils',
 	'SC.Configuration',
     'underscore'
 ], function (
@@ -10,6 +11,7 @@ define('KDLHeaderMenu.View', [
 
     kdl_header_menu_tpl,
 
+    CategoriesUtils,
     Configuration,
     _
 ) {
@@ -24,37 +26,85 @@ define('KDLHeaderMenu.View', [
             console.log('Configuration.navigationData', Configuration.navigationData);
             self.template = kdl_header_menu_tpl;
             self.configureCategories();
+
         })
 
     ,   configureCategories: function getBrand() {
-            var brand = {};
-            brand.beer = [];
-            brand.liquor = [];
-            brand.seltzer = [];
-            brand.cider = [];
+            
+            var brand = {
+                beer: {},
+                liquor: {},
+                seltzer: {},
+                cider: {},
+            };
+
+            brand.beer.data = [];
+            brand.beer.bs = [];
+            brand.liquor.data = [];
+            brand.liquor.bs = [];
+            brand.seltzer.data = [];
+            brand.cider.data = [];
 
             _.each(Configuration.navigationData, function(value, key) {
                 switch ( value.parentId ) {
                     case "Beer":
-                        brand.beer.push( value );
+                        brand.beer.data.push( value );
+                        break;
+                    case "Beer-Bestseller-Item":
+                        brand.beer.bs.push( value );
                         break;
                     case "Liquor":
-                        brand.liquor.push( value );
+                        brand.liquor.data.push( value );
+                        break;
+                    case "Liquor-Bestseller-Item":
+                        brand.liquor.bs.push( value );
                         break;
                     case "Seltzer":
-                        brand.seltzer.push( value );
+                        brand.seltzer.data.push( value );
                         break;
                     case "Cider":
-                        brand.cider.push( value );
+                        brand.cider.data.push( value );
                         break;
                 }
+
+                // BEER
+                if( value.text == 'Beer Category Image') {
+                    brand.beer.categoryimage = value.featuredimage;
+                }
+                if( value.text == 'Beer Category Brand') {
+                    brand.beer.brandimage = value.featuredimage;
+                }
+                if( value.text == 'Beer Category Bestseller') {
+                    brand.beer.bestsellerimage = value.featuredimage;
+                }
+                if( value.text == 'Beer Category Shop') {
+                    brand.beer.shopimage = value.featuredimage;
+                }
+
+                // LIQUOR
+                if( value.text == 'Liquor Category Image') {
+                    brand.liquor.categoryimage = value.featuredimage;
+                }
+                if( value.text == 'Liquor Category Brand') {
+                    brand.liquor.brandimage = value.featuredimage;
+                }
+                if( value.text == 'Liquor Category Bestseller') {
+                    brand.liquor.bestsellerimage = value.featuredimage;
+                }
+                if( value.text == 'Liquor Category Shop') {
+                    brand.liquor.shopimage = value.featuredimage;
+                }
+
             });
 
             _.each(Configuration.navigationData, function(value, key) {
                 if( value.text == 'Beer') {
-                    value.brand = brand.beer;
-                    value.featuredimage = brand.beer[0].featuredimage;
-                    value.item = brand.beer[0].href;
+                    value.brand = brand.beer.data;
+                    value.bestseller = brand.beer.bs;
+                    value.categoryimage = brand.beer.categoryimage;
+                    value.brandimage = brand.beer.brandimage;
+                    value.bestsellerimage = brand.beer.bestsellerimage;
+                    value.shopimage = brand.beer.shopimage;
                 }
             })
 
