@@ -98,13 +98,20 @@ define('KDLHeaderMenu.View', [
             });
 
             _.each(Configuration.navigationData, function(value, key) {
-                if( value.text == 'Beer') {
+                if( value.text == 'Beer' ) {
                     value.brand = brand.beer.data;
                     value.bestseller = brand.beer.bs;
                     value.categoryimage = brand.beer.categoryimage;
                     value.brandimage = brand.beer.brandimage;
                     value.bestsellerimage = brand.beer.bestsellerimage;
                     value.shopimage = brand.beer.shopimage;
+                } else if (value.text == 'Liquor') {
+                    value.brand = brand.liquor.data;
+                    value.bestseller = brand.liquor.bs;
+                    value.categoryimage = brand.liquor.categoryimage;
+                    value.brandimage = brand.liquor.brandimage;
+                    value.bestsellerimage = brand.liquor.bestsellerimage;
+                    value.shopimage = brand.liquor.shopimage;
                 }
             })
 
