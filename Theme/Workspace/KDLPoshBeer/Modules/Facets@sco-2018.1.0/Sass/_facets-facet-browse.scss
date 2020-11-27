@@ -13,16 +13,16 @@
 }
 
 .facets-facet-browse-breadcrum {
-	@extend .breadcrumb;
+    @extend .breadcrumb;
 }
 
 .facets-facet-browse-category {
-	@extend .clearfix;
+    @extend .clearfix;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////
 //Facet Browse - Header
 .facets-facet-browse-header {
-	@extend .clearfix;
+    @extend .clearfix;
     padding: $sc-margin-lv1 0 $sc-margin-lv2;
     width: 100%;
     @media (min-width: $screen-md-min) {
@@ -46,16 +46,16 @@
         padding-left: $sc-padding-lv3;
     }
 
-	@media (min-width: $screen-md-min) {
+    @media (min-width: $screen-md-min) {
         text-align: left;
-		margin-top: $sc-margin-lv1;
-	}
+        margin-top: $sc-margin-lv1;
+    }
 }
 
 .facets-facet-browse-title-alt {}
 
 .facets-facet-browse-list-header {
-	@extend .list-header;
+    @extend .list-header;
 }
 
 .facets-facet-browse-list-header-actions {
@@ -89,16 +89,16 @@
 }
 
 .facets-facet-browse-list-header-expander-button {
-	@extend .list-header-expander-button;
-	margin-right: 0;
+    @extend .list-header-expander-button;
+    margin-right: 0;
 }
 
 .facets-facet-browse-list-header-expander-icon {
-	@extend .list-header-expander-icon;
+    @extend .list-header-expander-icon;
 }
 
 .facets-facet-browse-list-header-filters {
-	@extend .list-header-filters;
+    @extend .list-header-filters;
     margin: 0;
 }
 
@@ -111,25 +111,25 @@
 }
 
 .facets-facet-browse-list-header-filters-row {
-	@extend .list-header-filters-row;
+    @extend .list-header-filters-row;
 }
 
 .facets-facet-browse-list-header-filter-column {
-	@extend .list-header-filter-column;
+    @extend .list-header-filter-column;
 }
 
 .facets-facet-browse-list-header-filter-facets {
-	@extend .list-header-filter-facets;
-	border-radius: 0;
+    @extend .list-header-filter-facets;
+    border-radius: 0;
     padding: $sc-padding-lv2;
 
     background-color: #626362; // change to variable
     color: $sc-neutral-shade-0;
 
-	.facets-facet-browse-list-header-filter-facets-icon {
-		@extend .list-header-filter-facets-icon;
-		font-size: 22px;
-	}
+    .facets-facet-browse-list-header-filter-facets-icon {
+        @extend .list-header-filter-facets-icon;
+        font-size: 22px;
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -137,7 +137,7 @@
 
 .facets-facet-browse-content,
 .facets-facet-browse-empty-items {
-	@extend .clearfix;
+    @extend .clearfix;
   &.no-items {
     .facets-facet-browse-results {
       width: 100% !important;
@@ -155,48 +155,53 @@
 
 .facets-facet-browse-facets-sidebar
 {
-	display: none;
+    display: none;
 
-	@media (min-width: $screen-md-min) {
-		display: block;
-	}
+    @media (min-width: $screen-md-min) {
+        display: block;
+    }
 }
 
 .facets-faceted-navigation-item-cateogry
 {
-	padding-right: $sc-padding-lv3;
+    padding-right: $sc-padding-lv3;
 }
 
 .facets-faceted-navigation-item-cateogry .facets-faceted-navigation-item-facet-group-expander-icon
 {
-	line-height: 66px + $sc-padding-lv6;
+    line-height: 66px + $sc-padding-lv6;
 }
 
 .facets-facet-browse-facets {
-	@extend .col-md-3;
-	@include box-shadow(0 0 6px $sc-color-secondary);
-	padding: 0;
-	//background-color: $sc-neutral-shade-0;
-	overflow-x:hidden;
+    @extend .col-md-3;
+    @include box-shadow(0 0 6px $sc-color-secondary);
+    padding: 0;
+    //background-color: $sc-neutral-shade-0;
+    overflow-x:hidden;
     position: sticky;
     top: 60px;
     z-index: 0;
 
-	@media (min-width: $screen-md-min) {
-		@include box-shadow(none);
-		overflow:hidden;
-		padding-right: $sc-padding-lv3;
-		width: 20%;
-		// background-color:transparent;
+        @media(max-width: $screen-xs-max){
+           position: fixed;
+           z-index: 10000;
+        }
+
+    @media (min-width: $screen-md-min) {
+        @include box-shadow(none);
+        overflow:hidden;
+        padding-right: $sc-padding-lv3;
+        width: 20%;
+        // background-color:transparent;
     }
 
     @media (min-width: $screen-lg-min) {
-		@include box-shadow(none);
-		overflow:hidden;
-		padding-right: $sc-padding-lv3;
-		width: 16%;
-		// background-color:transparent;
-	}
+        @include box-shadow(none);
+        overflow:hidden;
+        padding-right: $sc-padding-lv3;
+        width: 16%;
+        // background-color:transparent;
+    }
 }
 
 .facets-facet-browse-facets[data-pusher="sc-pushable-md"] .sc-pusher-header {
@@ -212,7 +217,7 @@
 
 
 .facets-facet-browse-results {
-	@extend .col-md-9;
+    @extend .col-md-9;
     padding: 0;
 
     @media (min-width: $screen-md-min) {
@@ -228,22 +233,22 @@
 //Facet Browse - Items
 
 .facets-facet-browse-items .backbone-collection-view-row {
-	margin-bottom: $sc-margin-lv4;
+    margin-bottom: $sc-margin-lv4;
 
-	//the margin is only for the first backbone-collection-view-row
-	.backbone-collection-view-row {
-		margin-bottom: 0;
-	}
+    //the margin is only for the first backbone-collection-view-row
+    .backbone-collection-view-row {
+        margin-bottom: 0;
+    }
 }
 
 .facets-facet-browse-items .item-view-stock-msg-description {
-	margin-top:0;
+    margin-top:0;
 }
 
 .facets-facet-browse-narrowedby {
-	padding: 0 $sc-padding-lv3;
-	text-transform: capitalize;
-	line-height: 35px;
+    padding: 0 $sc-padding-lv3;
+    text-transform: capitalize;
+    line-height: 35px;
 }
 
 .facets-facet-browse-items {
@@ -255,14 +260,14 @@
         padding: 0;
     }
 
-	.item-cell-price {
-		margin-bottom: $sc-margin-lv2;
-	}
+    .item-cell-price {
+        margin-bottom: $sc-margin-lv2;
+    }
 
-	.item-cell-image {
-		max-width: 100%;
-		max-height: 100%;
-	}
+    .item-cell-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -271,14 +276,14 @@
 .facets-facet-browse-pagination {
     @extend .clearfix;
     text-align: center;
-	margin-bottom: $sc-margin-lv8;
+    margin-bottom: $sc-margin-lv8;
 }
 
 .facets-facet-browse-banner-section-bottom {
-	clear: both;
+    clear: both;
 }
 
 .facets-facet-browse-cms-area-2 {
-	@extend .col-md-9;
-	@extend .col-md-offset-3;
+    @extend .col-md-9;
+    @extend .col-md-offset-3;
 }
