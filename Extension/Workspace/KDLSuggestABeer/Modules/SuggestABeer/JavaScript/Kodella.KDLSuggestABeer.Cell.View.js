@@ -2,6 +2,8 @@ define(
 	'Kodella.KDLSuggestABeer.Cell.View'
 ,	[
 		'Backbone.CompositeView'
+	,	'ProductViews.Price.View'
+	, 'GlobalViews.StarRating.View'
 	,	'kodella_kdlsuggestabeer_cell.tpl'
 	,	'Profile.Model'
 
@@ -9,6 +11,8 @@ define(
 	]
 ,	function (
 		BackboneCompositeView
+	,	ProductViewsPriceView
+	, GlobalViewsStarRatingView
 	,	kodella_kdlsuggestabeer_cell_tpl
 	,	ProfileModel
 
@@ -32,6 +36,22 @@ define(
 				},0);
 			}
 		}
+
+	,	childViews: {
+				'Item.Price': function () {
+						return new ProductViewsPriceView({
+								model: this.model,
+								origin: 'RELATEDITEM'
+						});
+				},
+				'Global.StarRating': function () {
+						return new GlobalViewsStarRatingView({
+								model: this.model,
+								showRatingCount: false
+						});
+				}
+		}
+
 	,	getContext: function ()
 		{
 			var self = this;
@@ -42,7 +62,8 @@ define(
 				thumb: model.get('itemimages_detail') ? model.get('itemimages_detail').urls[0].url : model.get('itemimages_detail').urls[0].altimagetext,
 				url: model.get('_url'),
 				showprice: !ProfileModel.getInstance().hidePrices(),
-				price:  model.get('onlinecustomerprice_formatted')
+				price:  model.get('onlinecustomerprice_formatted'),
+				showRating: true
 			};
 
 		}

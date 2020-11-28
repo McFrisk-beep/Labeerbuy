@@ -4,10 +4,12 @@
       <img src="{{resizeImage thumb 'thumbnail'}}" />
     </a>
     <p class="sab-name"><a href="{{url}}" ><span>{{name}}</span></a></p>
-    {{#if showprice}}
-      <p class="kdl-price">{{onlinecustomerprice_formatted}}</p>
-    {{else}}
-      <p>{{translate 'Logged in to see price'}}</p>
-    {{/if}}
+
+    <div class="sab-item-price" data-view="Item.Price"></div>
+
+    {{#if showRating}}
+  	<div class="sab-item-rate" data-view="Global.StarRating"></div>
+  	{{/if}}
+
   </div>
 </div>
