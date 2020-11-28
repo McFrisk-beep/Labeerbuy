@@ -21,6 +21,7 @@ define('KDLHeader.View', [
             self.template = kdl_header_tpl;
             jQuery(window).on("scroll", self.kdDetectScroll);
             Backbone.history.on('all', self.toggleHomeClass, this);
+            $(window).on("resize", self.toggleHomeClass);
 
             if (SC.ENVIRONMENT.jsEnvironment === 'browser') {
                 window.setTimeout(function timeout() {
@@ -30,14 +31,18 @@ define('KDLHeader.View', [
                 },0);
             }
         })
-    ,   toggleHomeClass: function() {
+    ,   toggleHomeClass: _.debounce(function(e) {
             if(window.location.pathname == "/") {
-                jQuery('#main-container').css('margin-top', -Math.abs(jQuery('#site-header').outerHeight()-jQuery('.header-top-content').outerHeight()));
+                if(_.isDesktopDevice()) {
+                    jQuery('#main-container').css('margin-top', -Math.abs(jQuery('#site-header').outerHeight()-jQuery('.header-top-content').outerHeight()));
+                } else {
+                    jQuery('#main-container').css('margin-top', 0);
+                }
             } else {
                 jQuery('#main-container').css('padding-top', 0);
                 jQuery('#main-container').css('margin-top', 0);
             }
-        }
+        }, 50)
     ,   kdDetectScroll: function() {
             if (window.pageYOffset > this.headerSize) {
                 jQuery("#site-header").addClass("kdSticky");

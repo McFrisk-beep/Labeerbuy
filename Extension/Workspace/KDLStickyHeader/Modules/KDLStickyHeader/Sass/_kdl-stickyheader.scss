@@ -36,6 +36,12 @@ $kdl-background-opacity: .90; /* editable({"type": "string", "label": "Header Ba
     .header-top-content {
         display: none;
     }
+
+    .header-main-wrapper  {
+        @media screen and (max-width: $screen-sm-max) {
+            background: transparent;
+        }
+    }
 }
 
 //DESKTOP
