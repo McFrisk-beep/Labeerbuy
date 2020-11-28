@@ -6,7 +6,15 @@ button {
 .facets-facet-browse-facets {
     box-shadow: none;
 }
-
+.header-top-content {
+    min-height: 22px;
+    height: auto;
+}
+#content .home-page {
+    @media screen and (max-width: $screen-sm-max) {
+        margin-top: 0;
+    }
+}
 .header-main-nav {
     @media screen and (min-width: $screen-md-min) {
         display: none;
