@@ -93,13 +93,15 @@
 		clear: both;
 		display: flex;
 		justify-content: center;
-		flex: 0 1 50%;
-		@media screen and (min-width:  $screen-sm-min) {
-			flex: 0 1 32%;
-		}
+		flex-wrap: wrap;
 
 		& > div {
 			padding: 0 15px;
+			flex: 0 1 50%;
+			@media screen and (min-width:  $screen-sm-min) {
+				flex: 0 1 32.33%;
+			}
+			margin-bottom: 20px;
 
 			a {
 				margin-bottom: 15px;
@@ -112,9 +114,16 @@
 		}
 	}
 
-	.kdl-price {
-		font-size: 16px;
-		font-weight: bold;
+	.sab-item-price {
+		.product-views-price-lead {
+			font-size: 16px;
+			font-weight: bold;
+		}
+	}
+
+	.sab-item-rate  {
+		text-align: left;
+		display: inline-block;
 	}
 }
 
