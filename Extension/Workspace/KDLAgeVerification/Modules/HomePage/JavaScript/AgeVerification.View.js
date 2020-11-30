@@ -32,7 +32,7 @@ define('AgeVerification.View'
 				(you'll need to deploy and activate the extension first)
 			*/
 			if(self.getCookie('ageverification')){
-				jQuery("body").css("overflow", "unset");
+				//jQuery("body").css("overflow", "unset");
 			} else {
 				jQuery("body").css("overflow", "hidden");
 			}
@@ -52,8 +52,8 @@ define('AgeVerification.View'
 		}
 
 	,	redirectAgeVerification: function redirectAgeVerification(e) {
-			self.deleteCookie('ageverification');
 			window.location = Configuration.get("kdlageverification.redirecturl");
+			self.deleteCookie('ageverification');
 		}
 
 	, getCookie: function getCookie(name) {
