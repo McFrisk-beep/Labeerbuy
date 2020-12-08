@@ -51,6 +51,7 @@ define('KDLHeader.View', [
                 var topPosition = $('.header-logo-nav-container').position();
 
                 jQuery(".header-logo-image").css("width", "85px");
+                jQuery(".header-logo-image").css("height", "34px");
 
                 if(window.screen.availWidth >= 992){
                     jQuery(".header-logo-nav-container").css("height", "60px");
@@ -66,6 +67,7 @@ define('KDLHeader.View', [
                 var topOffset = $('.header-logo-nav-container').offset().top;
 
                 jQuery(".header-logo-image").css("width", "135px");
+                jQuery(".header-logo-image").css("height", "53px");
 
                 if(window.screen.availWidth >= 992){
                     jQuery(".header-logo-nav-container").css("height", "100px");

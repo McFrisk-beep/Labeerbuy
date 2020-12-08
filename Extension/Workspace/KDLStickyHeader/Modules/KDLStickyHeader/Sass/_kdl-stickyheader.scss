@@ -1,10 +1,15 @@
+//CUSTOMIZER
+$kdl-background-opacity: .90; /* editable({"type": "string", "label": "Header Background Opacity"}) */
+
 // GENERIC
 .header-logo-nav-container,
 .header-logo-nav-wrapper {
-    background: transparent;
+    //background: transparent;
+    opacity: $kdl-background-opacity;
 }
 .header-secondary-wrapper  {
     background: transparent;
+    //opacity: $kdl-background-opacity;
 }
 
 .shopping-layout-header {
@@ -21,9 +26,6 @@
 	}
 }
 
-//CUSTOMIZER
-$kdl-background-opacity: .90; /* editable({"type": "string", "label": "Header Background Opacity"}) */
-
 //STICKY
 .kdSticky {
     position: fixed;
@@ -39,7 +41,8 @@ $kdl-background-opacity: .90; /* editable({"type": "string", "label": "Header Ba
 
     .header-main-wrapper  {
         @media screen and (max-width: $screen-sm-max) {
-            background: transparent;
+            //background: transparent;
+            opacity: $kdl-background-opacity;
         }
     }
 }
