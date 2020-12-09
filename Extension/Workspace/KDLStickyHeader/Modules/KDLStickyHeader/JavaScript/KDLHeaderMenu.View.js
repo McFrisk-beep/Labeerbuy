@@ -118,12 +118,22 @@ define('KDLHeaderMenu.View', [
             return brand;
         }
 
+    ,   configureSideBarCategories: function configureSideBarCategories() {
+            return _.filter(Configuration.navigationData, function(data){
+                if( !data.parentId ) {
+                    return data;
+                }
+            });
+        }
+
     ,	getContext: _.wrap(View.prototype.getContext, function extendContext(fn) {
 			var context = fn.apply(this, _.toArray(arguments).slice(1));
 			var self = this;
 
+            self.configureSideBarCategories();
 			return _.extend(context, {
 				defaultImg: 'img/default.jpg'
+            ,   categories: self.configureSideBarCategories() || []
 			});
 		}) 
 		    
