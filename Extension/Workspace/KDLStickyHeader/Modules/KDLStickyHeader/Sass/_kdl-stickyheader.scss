@@ -10,6 +10,13 @@ $kdl-background-opacity: .90; /* editable({"type": "string", "label": "Header Ba
 .header-secondary-wrapper  {
     background: transparent;
     //opacity: $kdl-background-opacity;
+
+    @media screen and (min-width: $screen-md-min) {
+        position: unset;
+        .header-menu-level1 > li {
+            position: unset;
+        }
+    }
 }
 
 .shopping-layout-header {

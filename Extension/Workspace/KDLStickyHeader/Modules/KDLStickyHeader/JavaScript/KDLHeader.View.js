@@ -73,8 +73,11 @@ define('KDLHeader.View', [
                     jQuery(".header-logo-nav-container").css("height", "100px");
                 }
 
-                jQuery(".header-menu-level-container").css("top", (topOffset + 100) + "px");
-                jQuery(".header-profile-menu-myaccount-container").css("top", (topOffset + 100) + "px");
+                // console.log('topOffset + 100', topOffset + 100)
+                // jQuery(".header-menu-level-container").css("top", (topOffset + 100) + "px");
+                //jQuery(".header-profile-menu-myaccount-container").css("top", (topOffset + 100) + "px");
+                jQuery(".header-menu-level-container").css("top", "100px");
+                jQuery(".header-profile-menu-myaccount-container").css("top", "100pxpx");
                 console.log('top', jQuery(".header-profile-menu-myaccount-container").css("top"));
             }
         }

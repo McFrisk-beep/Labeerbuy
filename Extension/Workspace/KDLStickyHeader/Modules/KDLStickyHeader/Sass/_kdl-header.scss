@@ -169,6 +169,10 @@ button {
             }
         }
     }
+
+    @media screen and (min-width: $screen-md-min) {
+        position: absolute;
+    }
 }
 
 .header-logo {
