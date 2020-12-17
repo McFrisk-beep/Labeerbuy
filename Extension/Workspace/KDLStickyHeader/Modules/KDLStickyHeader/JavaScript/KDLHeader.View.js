@@ -57,9 +57,10 @@ define('KDLHeader.View', [
                     jQuery(".header-logo-nav-container").css("height", "60px");
                 }
 
-                jQuery(".header-menu-level-container").css("top", (topPosition.top + 58) + "px");
-                jQuery(".header-profile-menu-myaccount-container").css("top", (topPosition.top + 58) + "px");
-                console.log('top', jQuery(".header-profile-menu-myaccount-container").css("top"));
+                // jQuery(".header-menu-level-container").css("top", (topPosition.top + 58) + "px");
+                // jQuery(".header-profile-menu-myaccount-container").css("top", (topPosition.top + 58) + "px");
+                jQuery(".header-menu-level-container").css("top", "60px");
+                jQuery(".header-profile-menu-myaccount-container").css("top", "60px");
             } else {
                 jQuery("#site-header").removeClass("kdSticky");
                 jQuery('#main-container').css('padding-top', 0);
@@ -77,8 +78,8 @@ define('KDLHeader.View', [
                 // jQuery(".header-menu-level-container").css("top", (topOffset + 100) + "px");
                 //jQuery(".header-profile-menu-myaccount-container").css("top", (topOffset + 100) + "px");
                 jQuery(".header-menu-level-container").css("top", "100px");
-                jQuery(".header-profile-menu-myaccount-container").css("top", "100pxpx");
-                console.log('top', jQuery(".header-profile-menu-myaccount-container").css("top"));
+                jQuery(".header-profile-menu-myaccount-container").css("top", "100px");
+                // console.log('top', jQuery(".header-profile-menu-myaccount-container").css("top"));
             }
         }
     });

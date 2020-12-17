@@ -74,6 +74,7 @@ $kdl-background-opacity: .90; /* editable({"type": "string", "label": "Header Ba
     }
     .header-menu-level-container  {
         background: transparent;
+        @include transition(.3s);
         &::before {
             content: '';
             display: block;
