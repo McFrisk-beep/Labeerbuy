@@ -59,11 +59,15 @@ define('Kodella.KodellaCCT.Quote.View'
 
 			// if you would want to get the settings from the SMT Panel you would consult
 			// var field_value = this.settings.custrecord_<id of the custom field in the cct record>
-
+			// console.log('this.settings.custrecord_quotectatextcolor', this.settings.custrecord_quotectatextcolor)
 			return {
 				quote: this.settings.custrecord_quotetext,
+				quoteTextColor: this.settings.custrecord_quotectatextcolor,
 				author: this.settings.custrecord_quoteauthor,
-				overlayimg: this.settings.custrecord_quoteoverlay_url
+				overlayimg: this.settings.custrecord_quoteoverlay_url,
+				ctabtn: this.settings.custrecord_quotectatext,
+				ctalink: this.settings.custrecord_quotectalink,
+				overlaycolor: this.settings.custrecord_quotebgcolor
 			};
 		}
 	});

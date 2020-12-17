@@ -1,11 +1,14 @@
-<div class="quoteDiv">
+<div class="quoteDiv" style="{{#unless overlayimg}}background-color: {{overlaycolor}}{{/unless}}">
   {{#if overlayimg}}
-    <div class="qd-bgimg" style="background-image: url({{overlayimg}});"></div>
+    <div class="qd-bgimg" style="{{#if overlayimg}}background-image: url({{overlayimg}});{{/if}}"></div>
   {{/if}}
   <div class="quoteText">
-    <h1>&#8220;{{quote}}&#8221;</h1>
-    <h4>-</h4>
-    <h4>{{author}}</h4>
+    <h1 {{#if quoteTextColor}}style="color:{{quoteTextColor}};"{{/if}}>&#8220;{{quote}}&#8221;</h1>
+    <h4 {{#if quoteTextColor}}style="color:{{quoteTextColor}};"{{/if}}>-</h4>
+    <h4 {{#if quoteTextColor}}style="color:{{quoteTextColor}};"{{/if}}>{{author}}</h4>
+    {{#if ctalink}}
+      <a href="{{ctalink}}" class="button-primary button-large">{{ctabtn}}</a>
+    {{/if}}
   </div>
 </div>
 
